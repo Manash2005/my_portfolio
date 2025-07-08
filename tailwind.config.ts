@@ -11,8 +11,12 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Poppins', 'sans-serif'],
         code: ['monospace'],
+      },
+      boxShadow: {
+        'glow-primary': '0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3)',
+        'glow-accent': '0 0 15px hsl(var(--accent) / 0.5), 0 0 30px hsl(var(--accent) / 0.3)',
       },
       colors: {
         background: 'hsl(var(--background))',
