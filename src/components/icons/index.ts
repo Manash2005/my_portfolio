@@ -1,12 +1,8 @@
 export { HtmlIcon } from './HtmlIcon';
 export { CssIcon } from './CssIcon';
 export { JavaScriptIcon } from './JavaScriptIcon';
-export { ReactIcon } from './ReactIcon';
-export { TailwindIcon } from './TailwindIcon';
-export { NodeIcon } from './NodeIcon';
-export { ExpressIcon } from './ExpressIcon';
-export { MongoDbIcon } from './MongoDbIcon';
-export { FirebaseIcon } from './FirebaseIcon';
-export { GitIcon } from './GitIcon';
-export { GitHubIcon } from './GitHubIcon';
-export { VsCodeIcon } from './VsCodeIcon';
+export { BootstrapIcon } from './BootstrapIcon';
+export { CIcon } from './CIcon';
+export { CppIcon } from './CppIcon';
+export { PythonIcon } from './PythonIcon';
+export { MySqlIcon } from './MySqlIcon';
