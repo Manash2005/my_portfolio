@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import Image from 'next/image';
 
 const facts = ["Creative Thinker", "Fast Learner", "Team Player"];
 
@@ -21,22 +20,12 @@ export default function AboutSection() {
         <p className="mt-2 text-lg text-muted-foreground">A little bit about my journey.</p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-12 items-center max-w-5xl mx-auto">
-        <div className="relative w-56 h-56 md:w-64 md:h-64 mx-auto">
-          <Image
-            src="/portrait.jpg"
-            alt="Portrait of Manash"
-            fill
-            className="rounded-full object-cover shadow-lg border-4 border-primary/20"
-            sizes="(max-width: 768px) 14rem, 16rem"
-            data-ai-hint="portrait man"
-          />
-        </div>
-        <div className="md:col-span-2 space-y-6 text-center md:text-left">
+      <div className="max-w-3xl mx-auto">
+        <div className="space-y-6 text-center">
           <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
             I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.
           </p>
-          <div className="flex flex-wrap justify-center md:justify-start gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {facts.map((fact, index) => (
               <motion.div
                 key={fact}
