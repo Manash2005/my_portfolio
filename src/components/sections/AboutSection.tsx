@@ -22,13 +22,7 @@ export default function AboutSection() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-12 items-center max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative w-56 h-56 md:w-64 md:h-64 mx-auto"
-        >
+        <div className="relative w-56 h-56 md:w-64 md:h-64 mx-auto">
           <Image
             src="/portrait.jpg"
             alt="Portrait of Manash"
@@ -37,7 +31,7 @@ export default function AboutSection() {
             sizes="(max-width: 768px) 14rem, 16rem"
             data-ai-hint="portrait man"
           />
-        </motion.div>
+        </div>
         <div className="md:col-span-2 space-y-6 text-center md:text-left">
           <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
             I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.
