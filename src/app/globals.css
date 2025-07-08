@@ -74,19 +74,11 @@
     width: 120vw;
     height: 120vh;
     background-image:
-      radial-gradient(circle at 15% 50%, hsl(var(--primary) / 0.15), transparent 40%),
-      radial-gradient(circle at 85% 30%, hsl(var(--accent) / 0.15), transparent 40%);
+      radial-gradient(circle at 15% 50%, hsl(var(--primary) / 0.35), transparent 40%),
+      radial-gradient(circle at 85% 30%, hsl(var(--accent) / 0.35), transparent 40%);
     filter: blur(120px);
     pointer-events: none;
     animation: aurora-pulse 20s infinite;
-  }
-  .custom-cursor {
-    cursor: none;
-  }
-  .custom-cursor a,
-  .custom-cursor button,
-  .custom-cursor [role="button"] {
-    cursor: none;
   }
 }
 
