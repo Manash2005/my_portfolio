@@ -29,7 +29,7 @@ export default function HeroSection() {
       >
         <motion.h1
           variants={itemVariants}
-          className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-foreground"
+          className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground"
         >
           Hi, I'm Manash 👋
         </motion.h1>

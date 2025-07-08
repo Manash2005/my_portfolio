@@ -30,9 +30,9 @@ const itemVariants = {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="container mx-auto py-24 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
-        <h2 className="font-headline text-4xl font-bold tracking-tight">Things I’ve Built</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Things I’ve Built</h2>
         <p className="mt-2 text-lg text-muted-foreground">A selection of my favorite projects.</p>
       </div>
       <motion.div

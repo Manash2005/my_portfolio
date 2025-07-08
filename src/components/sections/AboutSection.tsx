@@ -13,10 +13,10 @@ export default function AboutSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto py-24 px-4 sm:px-6 lg:px-8"
+      className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="text-center mb-16">
-        <h2 className="font-headline text-4xl font-bold tracking-tight">About Me</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">About Me</h2>
         <p className="mt-2 text-lg text-muted-foreground">A little bit about my journey.</p>
       </div>
 

@@ -76,10 +76,10 @@ export default function ContactSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto py-24 px-4 sm:px-6 lg:px-8"
+      className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="text-center mb-12">
-        <h2 className="font-headline text-4xl font-bold tracking-tight">Let's Connect</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Let's Connect</h2>
         <p className="mt-2 text-lg text-muted-foreground">Have a question or want to work together? Drop me a message.</p>
       </div>
 

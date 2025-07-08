@@ -39,9 +39,9 @@ const itemVariants = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="container mx-auto py-24 px-4 sm:px-6 lg:px-8 bg-card/20 rounded-xl">
+    <section id="skills" className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card/20 rounded-xl">
       <div className="text-center mb-12">
-        <h2 className="font-headline text-4xl font-bold tracking-tight">My Toolkit</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">My Toolkit</h2>
         <p className="mt-2 text-lg text-muted-foreground">Technologies I use to build amazing things.</p>
       </div>
       <motion.div
