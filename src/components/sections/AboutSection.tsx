@@ -32,12 +32,11 @@ export default function AboutSection() {
         >
           <Card className="p-2 bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/50 shadow-glow-primary">
             <Image
-              src="https://placehold.co/400x400.png"
+              src="/portrait.png"
               alt="Manash"
               width={400}
               height={400}
-              className="rounded-lg w-full h-auto"
-              data-ai-hint="man portrait"
+              className="rounded-lg w-full h-auto object-cover"
             />
           </Card>
         </motion.div>

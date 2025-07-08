@@ -31,12 +31,11 @@ export default function HeroSection() {
         <motion.div variants={itemVariants} className="relative mb-8">
           <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-primary to-accent opacity-75 blur-xl animate-pulse"></div>
           <Image
-            src="https://placehold.co/150x150.png"
+            src="/portrait.png"
             alt="Manash"
             width={150}
             height={150}
-            className="relative rounded-full border-4 border-background"
-            data-ai-hint="man portrait"
+            className="relative rounded-full border-4 border-background object-cover"
           />
         </motion.div>
         
