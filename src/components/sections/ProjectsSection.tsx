@@ -5,14 +5,15 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
+import Image from 'next/image';
 
 const projects = [
-  { name: 'E-commerce Platform', description: 'A full-featured e-commerce site with product listings, cart, and checkout.', tags: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#' },
-  { name: 'Social Media App', description: 'A platform for users to connect, post updates, and interact with friends.', tags: ['React', 'Firebase', 'Tailwind'], liveUrl: '#', githubUrl: '#' },
-  { name: 'Task Management Tool', description: 'A productivity app to organize tasks, set deadlines, and track progress.', tags: ['JavaScript', 'Express.js'], liveUrl: '#', githubUrl: '#' },
-  { name: 'Portfolio Website', description: 'A personal portfolio to showcase my skills and projects to the world.', tags: ['Next.js', 'Framer Motion'], liveUrl: '#', githubUrl: '#' },
-  { name: 'Weather Dashboard', description: 'A sleek dashboard to check real-time weather forecasts for any city.', tags: ['React', 'API'], liveUrl: '#', githubUrl: '#' },
-  { name: 'Blog Platform', description: 'A content management system for creating and publishing blog posts.', tags: ['Node.js', 'EJS'], liveUrl: '#', githubUrl: '#' },
+  { name: 'E-commerce Platform', description: 'A full-featured e-commerce site with product listings, cart, and checkout.', tags: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#', imageUrl: 'https://placehold.co/600x400.png', hint: 'online store' },
+  { name: 'Social Media App', description: 'A platform for users to connect, post updates, and interact with friends.', tags: ['React', 'Firebase', 'Tailwind'], liveUrl: '#', githubUrl: '#', imageUrl: 'https://placehold.co/600x400.png', hint: 'social network' },
+  { name: 'Task Management Tool', description: 'A productivity app to organize tasks, set deadlines, and track progress.', tags: ['JavaScript', 'Express.js'], liveUrl: '#', githubUrl: '#', imageUrl: 'https://placehold.co/600x400.png', hint: 'task manager' },
+  { name: 'Portfolio Website', description: 'A personal portfolio to showcase my skills and projects to the world.', tags: ['Next.js', 'Framer Motion'], liveUrl: '#', githubUrl: '#', imageUrl: 'https://placehold.co/600x400.png', hint: 'developer portfolio' },
+  { name: 'Weather Dashboard', description: 'A sleek dashboard to check real-time weather forecasts for any city.', tags: ['React', 'API'], liveUrl: '#', githubUrl: '#', imageUrl: 'https://placehold.co/600x400.png', hint: 'weather app' },
+  { name: 'Blog Platform', description: 'A content management system for creating and publishing blog posts.', tags: ['Node.js', 'EJS'], liveUrl: '#', githubUrl: '#', imageUrl: 'https://placehold.co/600x400.png', hint: 'blogging platform' },
 ];
 
 const containerVariants = {
@@ -45,6 +46,16 @@ export default function ProjectsSection() {
         {projects.map((project, index) => (
           <motion.div key={index} variants={itemVariants}>
             <Card className="group h-full flex flex-col bg-card overflow-hidden border-border hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                    src={project.imageUrl}
+                    alt={`Screenshot of ${project.name}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-ai-hint={project.hint}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
               <CardHeader>
                 <CardTitle className="font-headline text-xl text-foreground group-hover:text-primary transition-colors">{project.name}</CardTitle>
               </CardHeader>
