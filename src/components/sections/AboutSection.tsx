@@ -1,9 +1,7 @@
 "use client";
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
 
 const facts = ["Creative Thinker", "Fast Learner", "Team Player"];
 
@@ -22,29 +20,12 @@ export default function AboutSection() {
         <p className="mt-2 text-lg text-muted-foreground">A little bit about my journey.</p>
       </div>
 
-      <div className="grid md:grid-cols-5 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="md:col-span-2"
-        >
-          <Card className="p-2 bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-primary/50 shadow-glow-primary">
-            <Image
-              src="/portrait.png"
-              alt="Manash"
-              width={400}
-              height={400}
-              className="rounded-lg w-full h-auto object-cover"
-            />
-          </Card>
-        </motion.div>
-        <div className="md:col-span-3 space-y-6">
+      <div className="max-w-3xl mx-auto text-center">
+        <div className="space-y-6">
           <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
             I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {facts.map((fact, index) => (
               <motion.div
                 key={fact}

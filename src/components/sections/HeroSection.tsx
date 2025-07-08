@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
@@ -28,17 +27,6 @@ export default function HeroSection() {
         animate="visible"
         className="container mx-auto flex h-full flex-col items-center justify-center text-center px-4"
       >
-        <motion.div variants={itemVariants} className="relative mb-8">
-          <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-primary to-accent opacity-75 blur-xl animate-pulse"></div>
-          <Image
-            src="/portrait.png"
-            alt="Manash"
-            width={150}
-            height={150}
-            className="relative rounded-full border-4 border-background object-cover"
-          />
-        </motion.div>
-        
         <motion.h1
           variants={itemVariants}
           className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-foreground"

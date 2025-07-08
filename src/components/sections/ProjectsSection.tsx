@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -8,12 +7,12 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
-  { name: 'E-commerce Platform', description: 'A full-featured e-commerce site with product listings, cart, and checkout.', tags: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#', image: 'https://placehold.co/600x400.png', aiHint: 'online store' },
-  { name: 'Social Media App', description: 'A platform for users to connect, post updates, and interact with friends.', tags: ['React', 'Firebase', 'Tailwind'], liveUrl: '#', githubUrl: '#', image: 'https://placehold.co/600x400.png', aiHint: 'social network' },
-  { name: 'Task Management Tool', description: 'A productivity app to organize tasks, set deadlines, and track progress.', tags: ['JavaScript', 'Express.js'], liveUrl: '#', githubUrl: '#', image: 'https://placehold.co/600x400.png', aiHint: 'to-do list' },
-  { name: 'Portfolio Website', description: 'A personal portfolio to showcase my skills and projects to the world.', tags: ['Next.js', 'Framer Motion'], liveUrl: '#', githubUrl: '#', image: 'https://placehold.co/600x400.png', aiHint: 'personal website' },
-  { name: 'Weather Dashboard', description: 'A sleek dashboard to check real-time weather forecasts for any city.', tags: ['React', 'API'], liveUrl: '#', githubUrl: '#', image: 'https://placehold.co/600x400.png', aiHint: 'weather app' },
-  { name: 'Blog Platform', description: 'A content management system for creating and publishing blog posts.', tags: ['Node.js', 'EJS'], liveUrl: '#', githubUrl: '#', image: 'https://placehold.co/600x400.png', aiHint: 'writing blog' },
+  { name: 'E-commerce Platform', description: 'A full-featured e-commerce site with product listings, cart, and checkout.', tags: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#' },
+  { name: 'Social Media App', description: 'A platform for users to connect, post updates, and interact with friends.', tags: ['React', 'Firebase', 'Tailwind'], liveUrl: '#', githubUrl: '#' },
+  { name: 'Task Management Tool', description: 'A productivity app to organize tasks, set deadlines, and track progress.', tags: ['JavaScript', 'Express.js'], liveUrl: '#', githubUrl: '#' },
+  { name: 'Portfolio Website', description: 'A personal portfolio to showcase my skills and projects to the world.', tags: ['Next.js', 'Framer Motion'], liveUrl: '#', githubUrl: '#' },
+  { name: 'Weather Dashboard', description: 'A sleek dashboard to check real-time weather forecasts for any city.', tags: ['React', 'API'], liveUrl: '#', githubUrl: '#' },
+  { name: 'Blog Platform', description: 'A content management system for creating and publishing blog posts.', tags: ['Node.js', 'EJS'], liveUrl: '#', githubUrl: '#' },
 ];
 
 const containerVariants = {
@@ -46,17 +45,6 @@ export default function ProjectsSection() {
         {projects.map((project, index) => (
           <motion.div key={index} variants={itemVariants}>
             <Card className="group h-full flex flex-col bg-card overflow-hidden border-border hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary">
-              <div className="relative">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  width={600}
-                  height={400}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={project.aiHint}
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300" />
-              </div>
               <CardHeader>
                 <CardTitle className="font-headline text-xl text-foreground group-hover:text-primary transition-colors">{project.name}</CardTitle>
               </CardHeader>
