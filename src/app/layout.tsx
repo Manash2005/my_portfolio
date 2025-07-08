@@ -21,8 +21,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        {children}
-        <Toaster />
+        <div className="relative isolate aurora-bg overflow-x-hidden">
+          {children}
+          <Toaster />
+        </div>
       </body>
     </html>
   );
