@@ -4,9 +4,9 @@ import { Github, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const socialLinks = [
-  { name: 'GitHub', icon: Github, url: 'https://github.com' },
-  { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com' },
-  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com' },
+  { name: 'GitHub', icon: Github, url: 'https://github.com/Manash2005' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/manash-swain' },
+  { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/manashhh_22?igsh=N2d0OWdya252MmF4' },
 ];
 
 export default function Footer() {
