@@ -16,8 +16,9 @@ import {
 const skills = [
   { name: 'HTML', icon: <HtmlIcon className="h-10 w-10" /> },
   { name: 'CSS', icon: <CssIcon className="h-10 w-10" /> },
-  { name: 'JavaScript', icon: <JavaScriptIcon className="h-10 w-10" /> },
   { name: 'Bootstrap', icon: <BootstrapIcon className="h-10 w-10" /> },
+  { name: 'JavaScript', icon: <JavaScriptIcon className="h-10 w-10" /> },
+  { name: 'Java', icon: <JavaScriptIcon className="h-10 w-10" /> },
   { name: 'C', icon: <CIcon className="h-10 w-10" /> },
   { name: 'C++', icon: <CppIcon className="h-10 w-10" /> },
   { name: 'Python', icon: <PythonIcon className="h-10 w-10" /> },

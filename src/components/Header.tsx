@@ -32,7 +32,7 @@ export default function Header() {
           key={link.name}
           href={link.href}
           onClick={() => isMobile && setMobileMenuOpen(false)}
-          className="font-headline text-lg tracking-wide text-foreground transition-colors hover:text-primary"
+          className="text-base tracking-wide text-foreground transition-colors hover:text-primary"
         >
           {link.name}
         </a>
@@ -50,7 +50,7 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#home" className="font-headline text-3xl font-bold text-foreground transition-colors hover:text-primary">
+        <a href="#home" className="font-logo text-4xl text-foreground transition-colors hover:text-primary">
           Manash
         </a>
         <div className="hidden md:flex">
