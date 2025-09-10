@@ -16,3 +16,6 @@ export { GitHubIcon } from './GitHubIcon';
 export { TailwindIcon } from './TailwindIcon';
 export { VsCodeIcon } from './VsCodeIcon';
 export { JavaIcon } from './JavaIcon';
+export { CanvaIcon } from './CanvaIcon';
+export { ExcelIcon } from './ExcelIcon';
+export { GoogleSheetsIcon } from './GoogleSheetsIcon';

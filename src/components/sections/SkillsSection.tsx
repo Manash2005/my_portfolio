@@ -11,7 +11,10 @@ import {
   CppIcon, 
   PythonIcon, 
   MySqlIcon,
-  JavaIcon
+  JavaIcon,
+  CanvaIcon,
+  ExcelIcon,
+  GoogleSheetsIcon
 } from '@/components/icons';
 
 const skills = [
@@ -24,6 +27,9 @@ const skills = [
   { name: 'C++', icon: <CppIcon /> },
   { name: 'Python', icon: <PythonIcon /> },
   { name: 'MySQL', icon: <MySqlIcon /> },
+  { name: 'Canva', icon: <CanvaIcon /> },
+  { name: 'MS Excel', icon: <ExcelIcon /> },
+  { name: 'Google Sheets', icon: <GoogleSheetsIcon /> },
 ];
 
 const containerVariants = {
