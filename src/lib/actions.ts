@@ -39,14 +39,13 @@ export async function submitContactForm(
 
   try {
     await sendContactEmail({ name, email, message });
+    return {
+      message: 'Your message has been sent successfully!',
+    };
   } catch (error) {
     console.error("Email sending error:", error);
     return {
         message: 'Something went wrong. Please try again later.',
     }
   }
-  
-  return {
-    message: 'Your message has been sent successfully!',
-  };
 }
