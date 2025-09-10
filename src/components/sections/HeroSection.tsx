@@ -30,12 +30,15 @@ export default function HeroSection() {
   });
 
   return (
-    <section id="home" className="relative h-screen w-full">
+    <section id="home" className="relative h-screen w-full overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-background via-primary/20 to-accent/20 bg-[size:400%_400%] animate-animated-gradient" />
+      <div className="absolute inset-0 z-[1] bg-black/30 backdrop-blur-sm" />
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container mx-auto flex h-full items-center justify-center px-4"
+        className="container mx-auto flex h-full items-center justify-center px-4 relative z-[2]"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
