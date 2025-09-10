@@ -6,7 +6,6 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
-import { useSound } from '@/hooks/useSound';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -35,7 +34,6 @@ const mobileLinkVariants = {
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { playHover, playClick } = useSound();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +44,6 @@ export default function Header() {
   }, []);
 
   const handleLinkClick = (isMobile: boolean) => {
-    playClick();
     if (isMobile) {
       setMobileMenuOpen(false);
     }
@@ -63,7 +60,6 @@ export default function Header() {
         <motion.a
           key={link.name}
           href={link.href}
-          onMouseEnter={playHover}
           onClick={() => handleLinkClick(isMobile)}
           className="tracking-wide text-foreground transition-colors hover:text-primary"
           variants={isMobile ? mobileLinkVariants : undefined}
@@ -86,8 +82,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <a 
           href="#home" 
-          onMouseEnter={playHover}
-          onClick={playClick}
+          onClick={() => handleLinkClick(false)}
           className="font-logo text-2xl font-semibold tracking-tight text-foreground transition-colors hover:text-primary">
           Manash
         </a>
@@ -104,7 +99,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-background/80 backdrop-blur-sm">
               <div className="flex h-full flex-col items-center justify-center">
-                <a href="#home" onClick={() => handleLinkClick(true)} onMouseEnter={playHover} className="font-logo text-2xl font-semibold mb-8">Manash</a>
+                <a href="#home" onClick={() => handleLinkClick(true)} className="font-logo text-2xl font-semibold mb-8">Manash</a>
                 <Separator className="mb-8" />
                 <NavLinks isMobile />
               </div>

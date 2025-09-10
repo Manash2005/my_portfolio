@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
-import { useSound } from '@/hooks/useSound';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,7 +28,6 @@ export default function HeroSection() {
     typeSpeed: 120,
     deleteSpeed: 80,
   });
-  const { playClick, playHover } = useSound();
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">

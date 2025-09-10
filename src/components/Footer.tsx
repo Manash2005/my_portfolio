@@ -2,7 +2,6 @@
 
 import { Github, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useSound } from '@/hooks/useSound';
 
 const socialLinks = [
   { name: 'GitHub', icon: Github, url: 'https://github.com' },
@@ -12,7 +11,6 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const { playHover, playClick } = useSound();
 
   return (
     <footer className="bg-card/50 border-t border-primary/10 mt-20">
@@ -26,8 +24,6 @@ export default function Footer() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label={link.name}
-                  onMouseEnter={playHover}
-                  onClick={playClick}
                 >
                   <link.icon className="h-6 w-6 text-foreground transition-colors hover:text-primary" />
                 </a>
