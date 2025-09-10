@@ -1,18 +1,13 @@
-import type { SVGProps } from "react";
 
-export function ReactIcon(props: SVGProps<SVGSVGElement>) {
+import Image from "next/image";
+
+export function ReactIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <circle cx="12" cy="12" r="2.5" />
-      <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2ZM12,20a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" />
-      <path d="M19.07,4.93a.75.75,0,0,0-1.06,0l-2,2a.75.75,0,0,0,1.06,1.06l2-2A.75.75,0,0,0,19.07,4.93Z" />
-      <path d="M4.93,19.07a.75.75,0,0,0,1.06,0l2-2a.75.75,0,0,0-1.06-1.06l-2,2A.75.75,0,0,0,4.93,19.07Z" />
-      <path d="M4.93,4.93a.75.75,0,0,0,0,1.06l2,2a.75.75,0,0,0,1.06-1.06l-2-2A.75.75,0,0,0,4.93,4.93Z" />
-      <path d="M19.07,19.07a.75.75,0,0,0,0-1.06l-2-2a.75.75,0,0,0-1.06,1.06l2,2A.75.75,0,0,0,19.07,19.07Z" />
-      <path d="M12,5a.75.75,0,0,0,.75-.75V2.75a.75.75,0,0,0-1.5,0V4.25A.75.75,0,0,0,12,5Z" />
-      <path d="M12,20.5a.75.75,0,0,0-.75.75v1.5a.75.75,0,0,0,1.5,0v-1.5A.75.75,0,0,0,12,20.5Z" />
-      <path d="M5,12a.75.75,0,0,0-.75-.75H2.75a.75.75,0,0,0,0,1.5H4.25A.75.75,0,0,0,5,12Z" />
-      <path d="M20.5,12a.75.75,0,0,0,.75-.75H19.75a.75.75,0,0,0,0,1.5h1.5A.75.75,0,0,0,20.5,12Z" />
-    </svg>
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+      alt="React Logo"
+      width={40}
+      height={40}
+    />
   );
 }

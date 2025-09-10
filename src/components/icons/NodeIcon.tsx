@@ -1,9 +1,13 @@
-import type { SVGProps } from "react";
 
-export function NodeIcon(props: SVGProps<SVGSVGElement>) {
+import Image from "next/image";
+
+export function NodeIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M11.6,14.33a3,3,0,0,1-2.18-.75l-4.59-3.8A3,3,0,0,1,3.41,6V5.88a3,3,0,0,1,1.42-2.58L9.42.75a3,3,0,0,1,3.16,0l4.59,2.55a3,3,0,0,1,1.42,2.58V6a3,3,0,0,1-1.42,2.78l-4.59,3.8A3,3,0,0,1,11.6,14.33Zm-1.58-13a.92.92,0,0,0-.5.14L4.93,4a.93.93,0,0,0-.43.79V6a.93.93,0,0,0,.43.79l4.59,3.8a.93.93,0,0,0,1,0l4.59-3.8A.93.93,0,0,0,16.59,6V5.88a.93.93,0,0,0-.43-.79L11.57,1.43A.92.92,0,0,0,10,1.29ZM19,16.89l-4.59,2.55a3,3,0,0,1-3.16,0l-4.59-2.55a1,1,0,0,1,1-1.78l4.09,2.27a1,1,0,0,0,1,0l4.09-2.27a1,1,0,1,1,1,1.78Z"/>
-    </svg>
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+      alt="Node.js Logo"
+      width={40}
+      height={40}
+    />
   );
 }
