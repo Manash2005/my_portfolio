@@ -100,9 +100,11 @@ export default {
         },
         'glow-pulse': {
           '0%, 100%': {
+            borderColor: 'hsl(var(--primary) / 0.6)',
             boxShadow: '0 0 15px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4)',
           },
           '50%': {
+            borderColor: 'hsl(48 96% 51% / 0.8)',
             boxShadow: '0 0 20px hsl(48 96% 51% / 0.8), 0 0 35px hsl(48 96% 51% / 0.6)',
           },
         },
