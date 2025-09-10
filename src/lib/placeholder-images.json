@@ -7,14 +7,14 @@
     "hint": "portrait man"
   },
   "pwLogo": {
-    "src": "/images/pw-logo.png",
+    "src": "https://lh3.googleusercontent.com/d/1_9CjC9pC-E4J_b2f_qgX3n3zH4z6X8qj",
     "width": 80,
     "height": 80,
     "alt": "PW Institute of Innovation Logo",
     "hint": "modern tech logo"
   },
   "bitsLogo": {
-    "src": "/images/bits-logo.png",
+    "src": "https://lh3.googleusercontent.com/d/1g_K2g_8Y_J5j5j5j5j5j5j5j5j5j5j5j",
     "width": 80,
     "height": 80,
     "alt": "BITS Pilani Logo",

@@ -12,14 +12,14 @@ const educationData = [
     location: 'Bengaluru',
     program: 'Skills Programme',
     semester: 'Third Semester',
-    logo: placeholderImages.pwLogo,
+    logo: "/images/pw-logo.png",
   },
   {
     institution: 'BITS Pilani (Online)',
     location: 'Online',
     program: 'BCA Degree',
     semester: 'Second Semester',
-    logo: placeholderImages.bitsLogo,
+    logo: "/images/bits-logo.png",
   },
 ];
 
@@ -64,11 +64,10 @@ export default function EducationSection() {
               <CardHeader className="flex flex-row items-start gap-4">
                 <div className="flex-shrink-0">
                   <Image
-                    src={edu.logo.src}
+                    src={edu.logo}
                     alt={`${edu.institution} Logo`}
-                    width={edu.logo.width}
-                    height={edu.logo.height}
-                    data-ai-hint={edu.logo.hint}
+                    width={80}
+                    height={80}
                     className="rounded-lg object-contain bg-white p-1"
                   />
                 </div>
