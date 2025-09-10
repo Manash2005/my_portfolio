@@ -70,7 +70,7 @@ export default function HeroSection() {
                   Download Resume
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-foreground/30 text-foreground/80">
+              <Button size="lg" variant="secondary" asChild className="hover:bg-secondary">
                 <a href="#contact">
                   <Send className="mr-2 h-5 w-5" />
                   Contact Me
