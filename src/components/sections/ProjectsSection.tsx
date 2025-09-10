@@ -8,12 +8,15 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
-  { name: 'E-commerce Platform', description: 'A full-featured e-commerce site with product listings, cart, and checkout.', tags: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#', image: 'https://picsum.photos/seed/ecomm/600/400', hint: 'ecommerce website' },
-  { name: 'Social Media App', description: 'A platform for users to connect, post updates, and interact with friends.', tags: ['React', 'Firebase', 'Tailwind'], liveUrl: '#', githubUrl: '#', image: 'https://picsum.photos/seed/social/600/400', hint: 'social media' },
-  { name: 'Task Management Tool', description: 'A productivity app to organize tasks, set deadlines, and track progress.', tags: ['JavaScript', 'Express.js'], liveUrl: '#', githubUrl: '#', image: 'https://picsum.photos/seed/task/600/400', hint: 'productivity app' },
-  { name: 'Portfolio Website', description: 'A personal portfolio to showcase my skills and projects to the world.', tags: ['Next.js', 'Framer Motion'], liveUrl: '#', githubUrl: '#', image: 'https://picsum.photos/seed/portfolio/600/400', hint: 'personal website' },
-  { name: 'Weather Dashboard', description: 'A sleek dashboard to check real-time weather forecasts for any city.', tags: ['React', 'API'], liveUrl: '#', githubUrl: '#', image: 'https://picsum.photos/seed/weather/600/400', hint: 'weather app' },
-  { name: 'Blog Platform', description: 'A content management system for creating and publishing blog posts.', tags: ['Node.js', 'EJS'], liveUrl: '#', githubUrl: '#', image: 'https://picsum.photos/seed/blog/600/400', hint: 'blog interface' },
+  { 
+    name: 'Book Heaven', 
+    description: 'An online bookstore landing page built with fundamental web technologies.', 
+    tags: ['HTML', 'CSS', 'JavaScript'], 
+    liveUrl: 'https://manash2005.github.io/bookhevan/', 
+    githubUrl: 'https://github.com/Manash2005/bookhevan', 
+    image: '/images/book-heaven.png', 
+    hint: 'bookstore website' 
+  },
 ];
 
 const containerVariants = {
