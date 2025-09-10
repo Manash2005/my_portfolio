@@ -64,13 +64,13 @@ export default function EducationSection() {
             <a href={edu.url} target="_blank" rel="noopener noreferrer" className="block h-full group">
               <Card className="h-full bg-card/50 border border-border group-hover:border-accent/50 transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-glow-accent">
                 <CardHeader className="flex flex-row items-start gap-4">
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 bg-white rounded-lg p-2 flex items-center justify-center w-[96px] h-[96px]">
                     <Image
                       src={edu.logo}
                       alt={`${edu.institution} Logo`}
                       width={80}
                       height={80}
-                      className="rounded-lg object-contain"
+                      className="object-contain"
                     />
                   </div>
                   <div>
