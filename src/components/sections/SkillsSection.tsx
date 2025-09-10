@@ -14,11 +14,10 @@ import {
 } from '@/components/icons';
 
 const skills = [
-  { name: 'HTML', icon: <HtmlIcon className="h-10 w-10" /> },
-  { name: 'CSS', icon: <CssIcon className="h-10 w-10" /> },
+  { name: 'HTML', icon: <HtmlIcon /> },
+  { name: 'CSS', icon: <CssIcon /> },
   { name: 'Bootstrap', icon: <BootstrapIcon className="h-10 w-10" /> },
   { name: 'JavaScript', icon: <JavaScriptIcon className="h-10 w-10" /> },
-  { name: 'Java', icon: <JavaScriptIcon className="h-10 w-10" /> },
   { name: 'C', icon: <CIcon className="h-10 w-10" /> },
   { name: 'C++', icon: <CppIcon className="h-10 w-10" /> },
   { name: 'Python', icon: <PythonIcon className="h-10 w-10" /> },
@@ -56,7 +55,7 @@ export default function SkillsSection() {
           <motion.div key={skill.name} variants={itemVariants}>
             <Card className="group bg-secondary/50 border border-transparent hover:border-primary transition-all duration-300 hover:shadow-glow-primary">
               <CardContent className="flex flex-col items-center justify-center p-6">
-                <div className="text-primary transition-transform duration-300 group-hover:scale-110">
+                <div className="text-primary transition-transform duration-300 group-hover:scale-110 h-10 w-10 flex items-center justify-center">
                   {skill.icon}
                 </div>
                 <p className="mt-4 font-semibold text-center text-foreground transition-colors duration-300 group-hover:text-primary">{skill.name}</p>
