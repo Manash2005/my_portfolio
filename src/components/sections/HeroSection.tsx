@@ -38,8 +38,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-background via-primary/20 to-accent/20 bg-[size:400%_400%] animate-animated-gradient" />
-      <div className="absolute inset-0 z-[1] bg-black/30 backdrop-blur-sm" />
+      <div className="absolute inset-0 z-[1] bg-black/30" />
 
       <motion.div
         variants={containerVariants}
