@@ -67,7 +67,7 @@ export default function EducationSection() {
                     alt={`${edu.institution} Logo`}
                     width={80}
                     height={80}
-                    className={`rounded-lg object-contain ${edu.institution.includes('PW') ? 'bg-white p-1' : ''}`}
+                    className="rounded-lg object-contain"
                   />
                 </div>
                 <div>
