@@ -61,13 +61,13 @@ export default function HeroSection() {
             
             <motion.div variants={itemVariants} className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 shadow-glow-primary">
-                <a href="/resume.pdf" download onClick={playClick} onMouseEnter={playHover}>
+                <a href="/resume.pdf" download>
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-glow-accent">
-                <a href="#contact" onClick={playClick} onMouseEnter={playHover}>
+                <a href="#contact">
                   <Send className="mr-2 h-5 w-5" />
                   Contact Me
                 </a>
