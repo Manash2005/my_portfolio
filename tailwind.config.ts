@@ -98,11 +98,20 @@ export default {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+        'glow-pulse': {
+          '0%, 100%': {
+            boxShadow: '0 0 15px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px hsl(48 96% 51% / 0.8), 0 0 35px hsl(48 96% 51% / 0.6)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'animated-gradient': 'animated-gradient 15s ease infinite',
+        'glow-pulse': 'glow-pulse 6s ease-in-out infinite',
       },
     },
   },
