@@ -30,14 +30,14 @@ export default function HeroSection() {
           variants={itemVariants}
           className="font-headline text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground"
         >
-          Hi, I'm Manash 👋
+          Hi, I'm Manash
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="mt-4 font-headline text-lg sm:text-xl md:text-2xl text-muted-foreground"
         >
-          Full Stack Developer | Tech Enthusiast
+          Developer
         </motion.p>
         
         <motion.div variants={itemVariants} className="mt-8 flex flex-col sm:flex-row gap-4">

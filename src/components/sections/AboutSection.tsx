@@ -25,7 +25,7 @@ export default function AboutSection() {
           <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
             I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          {/* <div className="flex flex-wrap justify-center gap-3">
             {facts.map((fact, index) => (
               <motion.div
                 key={fact}
@@ -39,7 +39,7 @@ export default function AboutSection() {
                 </Badge>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.section>
