@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Separator } from '@/components/ui/separator';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -12,6 +13,23 @@ const navLinks = [
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ];
+
+const mobileNavVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const mobileLinkVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,18 +44,24 @@ export default function Header() {
   }, []);
 
   const NavLinks = ({ isMobile = false }) => (
-    <nav className={`flex gap-4 ${isMobile ? 'flex-col items-center' : 'items-center'}`}>
+    <motion.nav 
+      className={`flex gap-4 ${isMobile ? 'flex-col items-center text-lg' : 'items-center'}`}
+      variants={isMobile ? mobileNavVariants : undefined}
+      initial={isMobile ? "hidden" : undefined}
+      animate={isMobile ? "visible" : undefined}
+    >
       {navLinks.map((link) => (
-        <a
+        <motion.a
           key={link.name}
           href={link.href}
           onClick={() => isMobile && setMobileMenuOpen(false)}
-          className="text-base tracking-wide text-foreground transition-colors hover:text-primary"
+          className="tracking-wide text-foreground transition-colors hover:text-primary"
+          variants={isMobile ? mobileLinkVariants : undefined}
         >
           {link.name}
-        </a>
+        </motion.a>
       ))}
-    </nav>
+    </motion.nav>
   );
 
   return (
@@ -64,8 +88,10 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[250px] bg-background">
-              <div className="flex h-full flex-col justify-center">
+            <SheetContent side="right" className="w-[300px] bg-background/80 backdrop-blur-sm">
+              <div className="flex h-full flex-col items-center justify-center">
+                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="font-logo text-2xl font-semibold mb-8">Manash</a>
+                <Separator className="mb-8" />
                 <NavLinks isMobile />
               </div>
             </SheetContent>
