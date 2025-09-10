@@ -11,7 +11,7 @@ const educationData = [
     location: 'Bengaluru',
     program: 'Skills Programme',
     semester: 'Third Semester',
-    logo: "/images/pw-logo.webp",
+    logo: "/images/pw-logo.png",
     url: 'https://www.pwioi.com/',
   },
   {
