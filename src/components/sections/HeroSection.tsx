@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Download, Send } from 'lucide-react';
+import { Download, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
@@ -19,6 +19,12 @@ const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 };
+
+const socialLinks = [
+  { name: 'GitHub', icon: Github, url: 'https://github.com' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com' },
+  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com' },
+];
 
 export default function HeroSection() {
   const { hero: heroImage } = placeholderImages;
@@ -71,6 +77,21 @@ export default function HeroSection() {
                   Contact Me
                 </a>
               </Button>
+            </motion.div>
+            
+            <motion.div variants={itemVariants} className="mt-8 flex gap-4">
+              {socialLinks.map((link) => (
+                <Button key={link.name} variant="outline" size="icon" className="rounded-full border-foreground/50 hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110" asChild>
+                  <a 
+                    href={link.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label={link.name}
+                  >
+                    <link.icon className="h-5 w-5" />
+                  </a>
+                </Button>
+              ))}
             </motion.div>
           </div>
           <motion.div 
