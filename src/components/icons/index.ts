@@ -15,3 +15,4 @@ export { GitIcon } from './GitIcon';
 export { GitHubIcon } from './GitHubIcon';
 export { TailwindIcon } from './TailwindIcon';
 export { VsCodeIcon } from './VsCodeIcon';
+export { JavaIcon } from './JavaIcon';
