@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,6 +22,13 @@ const itemVariants = {
 
 export default function HeroSection() {
   const { hero: heroImage } = placeholderImages;
+  const [text] = useTypewriter({
+    words: ["Hi, I'm Manash"],
+    loop: 1,
+    typeSpeed: 120,
+    deleteSpeed: 80,
+  });
+
   return (
     <section id="home" className="relative h-screen w-full">
       <motion.div
@@ -35,7 +43,8 @@ export default function HeroSection() {
               variants={itemVariants}
               className="font-headline text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-foreground"
             >
-              Hi, I'm Manash
+              <span>{text}</span>
+              <Cursor cursorStyle='|' />
             </motion.h1>
 
             <motion.p
