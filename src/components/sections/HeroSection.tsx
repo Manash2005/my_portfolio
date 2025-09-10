@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { useTypewriterSound } from '@/hooks/useSound';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,11 +23,16 @@ const itemVariants = {
 
 export default function HeroSection() {
   const { hero: heroImage } = placeholderImages;
+  const playTypewriterSound = useTypewriterSound();
+  
   const [text] = useTypewriter({
     words: ["Hi, I'm Manash"],
     loop: 1,
     typeSpeed: 120,
     deleteSpeed: 80,
+    onType: () => {
+      playTypewriterSound();
+    }
   });
 
   return (
