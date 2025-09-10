@@ -12,7 +12,7 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Poppins', 'sans-serif'],
-        logo: ['Great Vibes', 'cursive'],
+        logo: ['Poppins', 'sans-serif'],
         code: ['monospace'],
       },
       boxShadow: {
