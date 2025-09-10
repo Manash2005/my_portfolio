@@ -5,5 +5,19 @@
     "height": 400,
     "alt": "Manash's Portrait",
     "hint": "portrait man"
+  },
+  "pwLogo": {
+    "src": "https://picsum.photos/seed/pwlogo/80/80",
+    "width": 80,
+    "height": 80,
+    "alt": "PW Institute of Innovation Logo",
+    "hint": "modern tech logo"
+  },
+  "bitsLogo": {
+    "src": "https://picsum.photos/seed/bitslogo/80/80",
+    "width": 80,
+    "height": 80,
+    "alt": "BITS Pilani Logo",
+    "hint": "university crest"
   }
 }
