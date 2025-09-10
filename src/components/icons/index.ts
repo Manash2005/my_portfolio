@@ -19,3 +19,5 @@ export { JavaIcon } from './JavaIcon';
 export { CanvaIcon } from './CanvaIcon';
 export { ExcelIcon } from './ExcelIcon';
 export { GoogleSheetsIcon } from './GoogleSheetsIcon';
+export { LeetCodeIcon } from './LeetCodeIcon';
+export { GeeksForGeeksIcon } from './GeeksForGeeksIcon';

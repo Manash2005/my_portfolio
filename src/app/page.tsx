@@ -7,6 +7,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import CodingProfilesSection from '@/components/sections/CodingProfilesSection';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
+        <CodingProfilesSection />
         <EducationSection />
         <SkillsSection />
         <ProjectsSection />
