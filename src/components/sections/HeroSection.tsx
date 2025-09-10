@@ -38,7 +38,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 z-[1] bg-black/30" />
+      <div className="absolute inset-0 z-[1] bg-black/50" />
 
       <motion.div
         variants={containerVariants}
@@ -64,13 +64,13 @@ export default function HeroSection() {
             </motion.p>
             
             <motion.div variants={itemVariants} className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="text-primary-foreground transition-all duration-300 transform hover:scale-105 bg-[length:200%_auto] animate-animated-gradient bg-gradient-to-r from-[#E43636] to-[#FFF0CE]">
+              <Button size="lg" asChild className="text-black font-semibold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-[#E43636] to-[#FFF0CE]">
                 <a href="/resume.pdf" download>
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-primary-foreground transition-all duration-300 transform hover:scale-105 border-none bg-[length:200%_auto] animate-animated-gradient bg-gradient-to-r from-[#E43636] to-[#FFF0CE]">
+              <Button size="lg" variant="outline" asChild className="border-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105">
                 <a href="#contact">
                   <Send className="mr-2 h-5 w-5" />
                   Contact Me
