@@ -2,12 +2,8 @@ import type { SVGProps } from "react";
 
 export function VsCodeIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M2 3l10 2.5v13L2 21V3z" />
-      <path d="M22 3l-10 2.5v13L22 21V3z" />
-      <path d="M12 5.5v13" />
-      <path d="M6 8.5l-4 4 4 4" />
-      <path d="M18 8.5l4 4-4 4" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M21.41,9.45l-5.88-5.88a1.05,1.05,0,0,0-1.48,0L3.41,14.21a1,1,0,0,0-.29.71V19a1,1,0,0,0,1,1H9.79a1,1,0,0,0,.71-.29l10.91-10.9a1,1,0,0,0,0-1.49ZM8.38,18H5V14.62l7.19-7.19,3.38,3.38ZM17.2,9.6,13.82,6.22l2.09-2.09,3.38,3.38Z"/>
     </svg>
   );
 }

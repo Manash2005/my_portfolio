@@ -2,9 +2,8 @@ import type { SVGProps } from "react";
 
 export function TailwindIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M12 12c-3.5 0-7 1.5-7 5s3.5 5 7 5 7-1.5 7-5-3.5-5-7-5z" />
-      <path d="M12 2C8.5 2 5 3.5 5 7s3.5 5 7 5 7-1.5 7-5S15.5 2 12 2z" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10c5.514,0,10-4.486,10-10S17.514,2,12,2z M15.5,13.5c-1.379,0-2.5,1.121-2.5,2.5 s1.121,2.5,2.5,2.5s2.5-1.121,2.5-2.5S16.879,13.5,15.5,13.5z M8.5,13.5c-1.379,0-2.5,1.121-2.5,2.5s1.121,2.5,2.5,2.5 s2.5-1.121,2.5-2.5S9.879,13.5,8.5,13.5z M15.5,6.5c-1.379,0-2.5,1.121-2.5,2.5s1.121,2.5,2.5,2.5s2.5-1.121,2.5-2.5 S16.879,6.5,15.5,6.5z M8.5,6.5C7.121,6.5,6,7.621,6,9s1.121,2.5,2.5,2.5s2.5-1.121,2.5-2.5S9.879,6.5,8.5,6.5z"></path>
     </svg>
   );
 }

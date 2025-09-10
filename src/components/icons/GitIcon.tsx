@@ -2,12 +2,8 @@ import type { SVGProps } from "react";
 
 export function GitIcon(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <circle cx="12" cy="12" r="4" />
-      <line x1="12" y1="16" x2="12" y2="22" />
-      <line x1="12" y1="2" x2="12" y2="8" />
-      <line x1="15.54" y1="8.46" x2="19.07" y2="4.93" />
-      <line x1="4.93" y1="19.07" x2="8.46" y2="15.54" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M21.93,10.65,13.35,2.07a1.86,1.86,0,0,0-2.7,0L2.07,10.65a1.86,1.86,0,0,0,0,2.7l3.21,3.21a1.94,1.94,0,0,0,1.35.5H12v-6H8.5a.5.5,0,0,1,0-1H12V3.5a.5.5,0,0,1,1,0v6h3.5a.5.5,0,0,1,0,1H13v6h5.36a1.94,1.94,0,0,0,1.35-.5l3.21-3.21a1.86,1.86,0,0,0,0-2.7Z"/>
     </svg>
   );
 }

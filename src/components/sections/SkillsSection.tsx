@@ -10,18 +10,36 @@ import {
   CIcon, 
   CppIcon, 
   PythonIcon, 
-  MySqlIcon 
+  MySqlIcon,
+  ReactIcon,
+  NodeIcon,
+  ExpressIcon,
+  MongoDbIcon,
+  FirebaseIcon,
+  GitIcon,
+  GitHubIcon,
+  TailwindIcon,
+  VsCodeIcon
 } from '@/components/icons';
 
 const skills = [
   { name: 'HTML', icon: <HtmlIcon /> },
   { name: 'CSS', icon: <CssIcon /> },
-  { name: 'Bootstrap', icon: <BootstrapIcon className="h-10 w-10" /> },
   { name: 'JavaScript', icon: <JavaScriptIcon className="h-10 w-10" /> },
+  { name: 'React', icon: <ReactIcon className="h-10 w-10" /> },
+  { name: 'Node.js', icon: <NodeIcon className="h-10 w-10" /> },
+  { name: 'Express.js', icon: <ExpressIcon className="h-10 w-10" /> },
+  { name: 'MongoDB', icon: <MongoDbIcon className="h-10 w-10" /> },
+  { name: 'Firebase', icon: <FirebaseIcon className="h-10 w-10" /> },
+  { name: 'Bootstrap', icon: <BootstrapIcon className="h-10 w-10" /> },
+  { name: 'Tailwind CSS', icon: <TailwindIcon className="h-10 w-10" /> },
   { name: 'C', icon: <CIcon className="h-10 w-10" /> },
   { name: 'C++', icon: <CppIcon className="h-10 w-10" /> },
   { name: 'Python', icon: <PythonIcon className="h-10 w-10" /> },
   { name: 'MySQL', icon: <MySqlIcon className="h-10 w-10" /> },
+  { name: 'Git', icon: <GitIcon className="h-10 w-10" /> },
+  { name: 'GitHub', icon: <GitHubIcon className="h-10 w-10" /> },
+  { name: 'VS Code', icon: <VsCodeIcon className="h-10 w-10" /> },
 ];
 
 const containerVariants = {
@@ -49,7 +67,7 @@ export default function SkillsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-8"
+        className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-8"
       >
         {skills.map((skill) => (
           <motion.div key={skill.name} variants={itemVariants}>
