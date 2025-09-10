@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
 
 const navLinks = [
+  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
@@ -34,6 +35,7 @@ const mobileLinkVariants = {
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,20 +53,29 @@ export default function Header() {
 
   const NavLinks = ({ isMobile = false }) => (
     <motion.nav 
-      className={`flex gap-4 ${isMobile ? 'flex-col items-center text-lg' : 'items-center'}`}
+      className={`relative flex gap-2 ${isMobile ? 'flex-col items-center text-lg' : 'items-center'}`}
       variants={isMobile ? mobileNavVariants : undefined}
       initial={isMobile ? "hidden" : undefined}
       animate={isMobile ? "visible" : undefined}
+      onMouseLeave={() => !isMobile && setHoveredLink(null)}
     >
       {navLinks.map((link) => (
         <motion.a
           key={link.name}
           href={link.href}
           onClick={() => handleLinkClick(isMobile)}
-          className="tracking-wide text-foreground transition-colors hover:text-primary"
+          onMouseEnter={() => !isMobile && setHoveredLink(link.href)}
+          className="relative z-10 rounded-md px-3 py-2 tracking-wide text-foreground transition-colors hover:text-primary"
           variants={isMobile ? mobileLinkVariants : undefined}
         >
           {link.name}
+          {!isMobile && hoveredLink === link.href && (
+             <motion.div
+              layoutId="hover-background"
+              className="absolute inset-0 -z-10 rounded-md bg-secondary"
+              transition={{ type: "spring", stiffness: 350, damping: 30 }}
+            />
+          )}
         </motion.a>
       ))}
     </motion.nav>
