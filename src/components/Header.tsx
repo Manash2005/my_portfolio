@@ -50,7 +50,7 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#home" className="font-logo text-3xl font-semibold tracking-tight text-foreground transition-colors hover:text-primary">
+        <a href="#home" className="font-logo text-2xl font-semibold tracking-tight text-foreground transition-colors hover:text-primary">
           Manash
         </a>
         <div className="hidden md:flex">
