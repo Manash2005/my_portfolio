@@ -5,6 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
+import { useSound } from '@/hooks/useSound';
 
 const projects = [
   { name: 'E-commerce Platform', description: 'A full-featured e-commerce site with product listings, cart, and checkout.', tags: ['React', 'Node.js', 'MongoDB'], liveUrl: '#', githubUrl: '#' },
@@ -29,6 +30,7 @@ const itemVariants = {
 };
 
 export default function ProjectsSection() {
+  const { playHover, playClick } = useSound();
   return (
     <section id="projects" className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
@@ -44,7 +46,10 @@ export default function ProjectsSection() {
       >
         {projects.map((project, index) => (
           <motion.div key={index} variants={itemVariants}>
-            <Card className="group h-full flex flex-col bg-card overflow-hidden border-border hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary">
+            <Card 
+              className="group h-full flex flex-col bg-card overflow-hidden border-border hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-primary"
+              onMouseEnter={playHover}
+            >
               <CardHeader>
                 <CardTitle className="font-headline text-xl text-foreground group-hover:text-primary transition-colors">{project.name}</CardTitle>
               </CardHeader>
@@ -58,12 +63,12 @@ export default function ProjectsSection() {
               </CardContent>
               <CardFooter className="flex justify-end gap-2">
                 <Button variant="outline" size="sm" asChild>
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={playClick}>
                     <Github className="mr-2 h-4 w-4" /> GitHub
                   </a>
                 </Button>
                 <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" onClick={playClick}>
                     <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                   </a>
                 </Button>

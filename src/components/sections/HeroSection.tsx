@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Send } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { useSound } from '@/hooks/useSound';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,6 +29,7 @@ export default function HeroSection() {
     typeSpeed: 120,
     deleteSpeed: 80,
   });
+  const { playClick, playHover } = useSound();
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
@@ -59,13 +61,13 @@ export default function HeroSection() {
             
             <motion.div variants={itemVariants} className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 shadow-glow-primary">
-                <a href="/resume.pdf" download>
+                <a href="/resume.pdf" download onClick={playClick} onMouseEnter={playHover}>
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-105 shadow-glow-accent">
-                <a href="#contact">
+                <a href="#contact" onClick={playClick} onMouseEnter={playHover}>
                   <Send className="mr-2 h-5 w-5" />
                   Contact Me
                 </a>
