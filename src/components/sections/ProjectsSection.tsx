@@ -26,6 +26,15 @@ const projects = [
     image: '/images/student-portal.png', 
     hint: 'student portal dashboard' 
   },
+  {
+    name: 'EcoReborn',
+    description: 'An e-commerce site for organic fertilizers and home decor made from waste materials.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    liveUrl: 'https://manash2005.github.io/EcoReborn/',
+    githubUrl: 'https://github.com/Manash2005/EcoReborn/',
+    image: '/images/ecoreborn.png',
+    hint: 'eco-friendly products online store'
+  }
 ];
 
 const containerVariants = {
