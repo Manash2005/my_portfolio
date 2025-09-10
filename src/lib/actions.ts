@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { sendContactEmail } from "@/lib/email";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -36,34 +37,8 @@ export async function submitContactForm(
 
   const { name, email, message } = validatedFields.data;
 
-  // In a real application, you would add your form submission logic here.
-  // This is where you would integrate an email service like Resend, SendGrid, or Nodemailer.
   try {
-    console.log("Form data received:");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-
-    // Example with a hypothetical email service:
-    // const emailData = {
-    //   from: 'Your Portfolio <noreply@yourdomain.com>',
-    //   to: 'swainm099@gmail.com',
-    //   subject: `New message from ${name}`,
-    //   html: `
-    //     <p>You have a new contact form submission:</p>
-    //     <ul>
-    //       <li><strong>Name:</strong> ${name}</li>
-    //       <li><strong>Email:</strong> ${email}</li>
-    //       <li><strong>Message:</strong></li>
-    //     </ul>
-    //     <p>${message}</p>
-    //   `,
-    // };
-    // await emailService.send(emailData);
-
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
+    await sendContactEmail({ name, email, message });
   } catch (error) {
     console.error("Email sending error:", error);
     return {
