@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap } from 'lucide-react';
 
@@ -12,14 +11,14 @@ const educationData = [
     location: 'Bengaluru',
     program: 'Skills Programme',
     semester: 'Third Semester',
-    logo: "/images/pw-logo.png",
+    logo: "/images/pw-logo.webp",
   },
   {
     institution: 'BITS Pilani (Online)',
     location: 'Online',
     program: 'BCA Degree',
     semester: 'Second Semester',
-    logo: "/images/bits-logo.png",
+    logo: "/images/bits-pilani-logo.webp",
   },
 ];
 
@@ -68,7 +67,7 @@ export default function EducationSection() {
                     alt={`${edu.institution} Logo`}
                     width={80}
                     height={80}
-                    className="rounded-lg object-contain bg-white p-1"
+                    className={`rounded-lg object-contain ${edu.institution.includes('PW') ? 'bg-white p-1' : ''}`}
                   />
                 </div>
                 <div>
