@@ -41,9 +41,9 @@ export default function ContactSection() {
     });
 
     try {
-      const result = await submitContactForm({ success: false, message: "" }, formData);
+      const result = await submitContactForm({ message: "" }, formData);
 
-      if (result.success) {
+      if (!result.errors) {
         toast({
           title: "Message Sent!",
           description: "Thanks for reaching out. I'll get back to you soon.",
@@ -51,7 +51,6 @@ export default function ContactSection() {
         });
         form.reset();
       } else {
-        // This part can be extended to show specific field errors from result.errors
         toast({
           title: "Uh oh! Something went wrong.",
           description: result.message || "There was a problem with your submission.",

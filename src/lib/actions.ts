@@ -10,7 +10,6 @@ const contactSchema = z.object({
 
 export type FormState = {
   message: string;
-  success: boolean;
   errors?: {
     name?: string[];
     email?: string[];
@@ -32,25 +31,47 @@ export async function submitContactForm(
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: 'Please correct the errors below.',
-      success: false,
     };
   }
 
-  // Simulate sending the form data to an email service or database
+  const { name, email, message } = validatedFields.data;
+
+  // In a real application, you would add your form submission logic here.
+  // This is where you would integrate an email service like Resend, SendGrid, or Nodemailer.
   try {
-    console.log("Form data:", validatedFields.data);
+    console.log("Form data received:");
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+
+    // Example with a hypothetical email service:
+    // const emailData = {
+    //   from: 'Your Portfolio <noreply@yourdomain.com>',
+    //   to: 'swainm099@gmail.com',
+    //   subject: `New message from ${name}`,
+    //   html: `
+    //     <p>You have a new contact form submission:</p>
+    //     <ul>
+    //       <li><strong>Name:</strong> ${name}</li>
+    //       <li><strong>Email:</strong> ${email}</li>
+    //       <li><strong>Message:</strong></li>
+    //     </ul>
+    //     <p>${message}</p>
+    //   `,
+    // };
+    // await emailService.send(emailData);
+
+    // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 1000));
-    // In a real application, you would add your form submission logic here.
-    // e.g., send an email, save to a database.
+
   } catch (error) {
+    console.error("Email sending error:", error);
     return {
         message: 'Something went wrong. Please try again later.',
-        success: false,
     }
   }
   
   return {
     message: 'Your message has been sent successfully!',
-    success: true,
   };
 }
