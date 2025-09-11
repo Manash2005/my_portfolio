@@ -95,25 +95,28 @@ export default function TimelineSection() {
       </div>
 
       <div className="embla" ref={emblaRef}>
-        <div className="embla__container relative pb-16">
+        <div className="embla__container relative pb-16 pt-16">
           {timelineEvents.map((event, index) => (
-            <div className="embla__slide flex-grow-0 flex-shrink-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-4" key={index}>
+            <div className="embla__slide flex-grow-0 flex-shrink-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-8" key={index}>
               <motion.div
                 variants={itemVariants}
-                className={`relative flex flex-col h-full ${index % 2 === 0 ? 'items-start' : 'items-start sm:mt-16'}`}
+                className="relative h-full"
               >
-                <div className={`transform ${index % 2 !== 0 ? 'sm:-translate-y-1/2' : ''}`}>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary/20 text-primary rounded-full p-3 border-2 border-primary/50">
+                <div className={`relative flex flex-col items-center ${index % 2 === 0 ? 'mb-16' : 'mt-16'}`}>
+                  {/* Point and line */}
+                  <div className={`absolute w-px bg-primary/50 ${index % 2 === 0 ? 'top-0 h-1/2' : 'bottom-0 h-1/2'}`} />
+                  <div className={`absolute z-10 w-8 h-8 bg-primary/20 text-primary rounded-full p-1.5 border-2 border-primary/50 flex items-center justify-center top-1/2 -translate-y-1/2`}>
                       {event.icon}
-                    </div>
-                    <span className="font-semibold text-lg">{event.date}</span>
                   </div>
-
-                  <div className="mt-4 pl-16">
-                    <h3 className="font-headline font-bold text-xl text-foreground">{event.title}</h3>
-                    <p className="mt-1 text-muted-foreground">{event.description}</p>
-                    <Badge variant="secondary" className="mt-3">{event.category}</Badge>
+                  
+                  {/* Content */}
+                  <div className={`w-full ${index % 2 === 0 ? 'absolute bottom-[calc(50%+2rem)]' : 'absolute top-[calc(50%+2rem)]'}`}>
+                      <div className="text-center">
+                          <p className="font-semibold text-lg">{event.date}</p>
+                          <h3 className="font-headline font-bold text-xl text-foreground mt-2">{event.title}</h3>
+                          <p className="mt-1 text-muted-foreground text-sm">{event.description}</p>
+                          <Badge variant="secondary" className="mt-3">{event.category}</Badge>
+                      </div>
                   </div>
                 </div>
               </motion.div>
