@@ -95,31 +95,4 @@
     transition-duration: 0.5s, 0.5s;
     transition-timing-function: ease-out;
   }
-  .grainy-background::before {
-    content: '';
-    position: absolute;
-    top: -10rem;
-    left: -10rem;
-    width: calc(100% + 20rem);
-    height: calc(100% + 20rem);
-    z-index: -1;
-    background-image: linear-gradient(rgba(18, 16, 16, 0) 0%, rgba(0, 0, 0, 0) 90.52%),
-      url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjUwIDI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSBiYXNlRnJlcXVlbmN5PSIuOCIgdHlwZT0iZnJhY3RhbE5vaXNlIiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI25vaXNlKSIvPjwvc3ZnPg==');
-    opacity: 0.15;
-    animation: grain 8s steps(10) infinite;
-    pointer-events: none;
-  }
-}
-
-@keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  20% { transform: translate(-15%, 5%); }
-  30% { transform: translate(7%, -25%); }
-  40% { transform: translate(-5%, 25%); }
-  50% { transform: translate(-15%, 10%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 15%); }
-  80% { transform: translate(3%, 35%); }
-  90% { transform: translate(-10%, 10%); }
 }
