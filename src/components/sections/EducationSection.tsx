@@ -61,7 +61,7 @@ export default function EducationSection() {
                       />
                     </div>
                     <div>
-                      <CardTitle className="font-headline text-xl text-foreground group-hover:text-accent transition-colors">{edu.institution}</CardTitle>
+                      <CardTitle className="font-headline text-xl text-foreground">{edu.institution}</CardTitle>
                       <p className="text-sm text-muted-foreground">{edu.location}</p>
                     </div>
                   </CardHeader>
