@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import data from '@/lib/data.json';
+import LiquidEther from '@/components/LiquidEther';
 
 export const metadata: Metadata = {
   title: data.meta.title,
@@ -22,7 +23,26 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <div className="relative isolate aurora-bg overflow-x-hidden">
+        <div className="fixed top-0 left-0 w-full h-full z-[-1]">
+            <LiquidEther
+              colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
+              mouseForce={20}
+              cursorSize={100}
+              isViscous={false}
+              viscous={30}
+              iterationsViscous={32}
+              iterationsPoisson={32}
+              resolution={0.5}
+              isBounce={false}
+              autoDemo={true}
+              autoSpeed={0.5}
+              autoIntensity={2.2}
+              takeoverDuration={0.25}
+              autoResumeDelay={3000}
+              autoRampDuration={0.6}
+            />
+        </div>
+        <div className="relative isolate overflow-x-hidden">
           {children}
           <Toaster />
         </div>
