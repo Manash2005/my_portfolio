@@ -63,8 +63,9 @@ export default function SkillsSection() {
           <motion.div 
             key={skill.name} 
             variants={itemVariants}
+            className="group"
           >
-            <Card className="h-full bg-secondary/50 border border-transparent">
+            <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary">
               <CardContent className="flex flex-col items-center justify-center p-6">
                 <div className="h-10 w-10 flex items-center justify-center">
                   {skill.icon}
