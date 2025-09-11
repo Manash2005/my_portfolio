@@ -23,15 +23,6 @@ export default function AboutSection() {
 
       <div className="max-w-3xl mx-auto">
         <div className="space-y-8 text-center">
-            <div className="flex justify-center">
-                <Image
-                    src="https://api.dicebear.com/9.x/micah/svg?seed=Brooklynn"
-                    alt="avatar"
-                    width={128}
-                    height={128}
-                    className="rounded-full bg-secondary p-2"
-                />
-            </div>
           <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
             I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.
           </p>
