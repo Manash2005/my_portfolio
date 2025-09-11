@@ -42,9 +42,9 @@ export default function SocialButton({ platform, children }: SocialButtonProps) 
           variants={{
             hover: {
               rotate: 35,
-              scale: 1.5,
+              scale: 1,
               originX: 0.5,
-              originY: 1,
+              originY: 0.5,
             },
           }}
           transition={{ duration: 0.3, ease: 'easeOut' }}

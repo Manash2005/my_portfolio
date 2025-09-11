@@ -107,7 +107,7 @@ export default function HeroSection() {
             variants={itemVariants} 
             className="flex justify-center md:justify-end order-first md:order-last"
           >
-            <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
+            <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full shadow-[0_0_40px_5px_#A52A2A70]">
               <Image
                 src={heroImage.src}
                 alt={heroImage.alt}
