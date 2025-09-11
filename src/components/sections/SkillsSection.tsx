@@ -3,9 +3,11 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import * as Icons from '@/components/icons';
 import data from '@/lib/data.json';
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 const skills = data.skills;
 const { skills: content } = data.pageContent;
@@ -25,32 +27,58 @@ const iconComponents: Record<string, FC> = {
   GoogleSheetsIcon: Icons.GoogleSheetsIcon,
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: { y: 0, opacity: 1 },
 };
 
 export default function SkillsSection() {
+  const autoplayPlugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+
   return (
     <section id="skills" className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card/20 rounded-xl">
       <div className="text-center mb-12">
         <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
         <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
       </div>
+
+      <div className="md:hidden">
+        <Carousel
+          opts={{
+            align: 'start',
+            loop: true,
+          }}
+          plugins={[autoplayPlugin.current]}
+          className="w-full"
+        >
+          <CarouselContent>
+            {skills.map((skill, index) => {
+              const IconComponent = iconComponents[skill.icon];
+              return (
+                <CarouselItem key={skill.name} className="basis-1/2 sm:basis-1/3">
+                  <div className="p-1">
+                    <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 hover:border-primary/50 hover:shadow-glow-primary">
+                      <CardContent className="flex flex-col items-center justify-center p-6">
+                        <div className="h-10 w-10 flex items-center justify-center">
+                          {IconComponent ? <IconComponent /> : null}
+                        </div>
+                        <p className="mt-4 font-semibold text-center text-foreground">{skill.name}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
+      </div>
+
       <motion.div
-        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
+        transition={{ staggerChildren: 0.1 }}
+        className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
       >
         {skills.map((skill) => {
           const IconComponent = iconComponents[skill.icon];
