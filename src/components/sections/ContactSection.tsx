@@ -78,61 +78,63 @@ export default function ContactSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8"
+      className="bg-background-alt"
     >
-      <div className="text-center mb-12">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
-        <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
-      </div>
+      <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
+          <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
+        </div>
 
-      <div className="max-w-2xl mx-auto">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{content.form.name.label}</FormLabel>
-                  <FormControl>
-                    <Input placeholder={content.form.name.placeholder} {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{content.form.email.label}</FormLabel>
-                  <FormControl>
-                    <Input type="email" placeholder={content.form.email.placeholder} {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{content.form.message.label}</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder={content.form.message.placeholder} {...field} className="bg-secondary border-border min-h-[150px] focus:ring-primary focus:border-primary" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" disabled={isSubmitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-glow-accent">
-              {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
-              {isSubmitting ? content.form.submitButton.submittingText : content.form.submitButton.defaultText}
-            </Button>
-          </form>
-        </Form>
+        <div className="max-w-2xl mx-auto">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{content.form.name.label}</FormLabel>
+                    <FormControl>
+                      <Input placeholder={content.form.name.placeholder} {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{content.form.email.label}</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder={content.form.email.placeholder} {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{content.form.message.label}</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder={content.form.message.placeholder} {...field} className="bg-secondary border-border min-h-[150px] focus:ring-primary focus:border-primary" />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" disabled={isSubmitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-glow-accent">
+                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
+                {isSubmitting ? content.form.submitButton.submittingText : content.form.submitButton.defaultText}
+              </Button>
+            </form>
+          </Form>
+        </div>
       </div>
     </motion.section>
   );
