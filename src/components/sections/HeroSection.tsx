@@ -8,7 +8,6 @@ import { Download, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import data from '@/lib/data.json';
-import Orb from '@/components/Orb';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -107,14 +106,6 @@ export default function HeroSection() {
             className="flex justify-center md:justify-end order-first md:order-last"
           >
             <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
-              <div className="absolute inset-0 z-0">
-                <Orb
-                  hoverIntensity={0.5}
-                  rotateOnHover={true}
-                  hue={240}
-                  forceHoverState={false}
-                />
-              </div>
               <Image
                 src={heroImage.src}
                 alt={heroImage.alt}
