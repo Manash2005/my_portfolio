@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import data from '@/lib/data.json';
 import LiquidEther from '@/components/LiquidEther';
+import CustomCursor from '@/components/CustomCursor';
 
 export const metadata: Metadata = {
   title: data.meta.title,
@@ -23,6 +24,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <CustomCursor />
         <div className="fixed top-0 left-0 w-full h-full z-[-1]">
             <LiquidEther
               colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
@@ -34,7 +36,7 @@ export default function RootLayout({
               iterationsPoisson={32}
               resolution={0.5}
               isBounce={false}
-              autoDemo={true}
+              autoDemo={false}
               autoSpeed={0.5}
               autoIntensity={2.2}
               takeoverDuration={0.25}
