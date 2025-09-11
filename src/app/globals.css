@@ -7,7 +7,7 @@
     @apply scroll-smooth;
   }
   :root {
-    --background: 0 0% 4%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
     --card: 240 2% 15%;
     --card-foreground: 0 0% 98%;
@@ -35,7 +35,7 @@
   }
   
   .dark {
-    --background: 0 0% 4%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
     --card: 240 2% 15%;
     --card-foreground: 0 0% 98%;
@@ -79,6 +79,37 @@
     filter: blur(120px);
     pointer-events: none;
     animation: aurora-pulse 20s infinite;
+  }
+}
+
+@layer utilities {
+  .btn-glare {
+    @apply relative overflow-hidden;
+  }
+  .btn-glare::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.0) 100%
+    );
+  }
+  .btn-glare:hover::after {
+    opacity: 1;
+    left: 130%;
+    transition-property: left, opacity;
+    transition-duration: 0.7s, 0.7s;
+    transition-timing-function: ease-out;
   }
 }
 

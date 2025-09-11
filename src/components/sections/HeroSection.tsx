@@ -64,7 +64,7 @@ export default function HeroSection() {
             </motion.p>
             
             <motion.div variants={itemVariants} className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="text-white font-semibold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-[#E43636] to-[#3B060A]">
+              <Button size="lg" asChild className="text-white font-semibold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-[#E43636] to-[#3B060A] btn-glare">
                 <a href="/resume.pdf" download>
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
