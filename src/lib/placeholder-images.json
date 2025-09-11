@@ -1,10 +1,10 @@
 {
   "hero": {
-    "src": "https://api.dicebear.com/8.x/bottts/svg?seed=Manash",
+    "src": "/images/manash-hero.png",
     "width": 400,
     "height": 400,
-    "alt": "DiceBear Avatar",
-    "hint": "robot avatar"
+    "alt": "Manash Swain",
+    "hint": "developer portrait"
   },
   "pwLogo": {
     "src": "https://lh3.googleusercontent.com/d/1_9CjC9pC-E4J_b2f_qgX3n3zH4z6X8qj",
