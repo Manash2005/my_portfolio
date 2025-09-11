@@ -1,14 +1,24 @@
 
-import Image from "next/image";
-
 export function LeetCodeIcon() {
   return (
-    <Image
-      src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/leetcode.svg"
-      alt="LeetCode Logo"
-      width={40}
-      height={40}
-      className="dark:invert"
-    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="text-yellow-400"
+    >
+      <path d="M12.5,14.5h-1c-0.6,0-1,0.4-1,1v5c0,0.6,0.4,1,1,1h1c0.6,0,1-0.4,1-1v-5C13.5,14.9,13.1,14.5,12.5,14.5z" />
+      <path d="M5.5,16.5h-1c-0.6,0-1,0.4-1,1v3c0,0.6,0.4,1,1,1h1c0.6,0,1-0.4,1-1v-3C6.5,16.9,6.1,16.5,5.5,16.5z" />
+      <path d="M19.5,12.5h-1c-0.6,0-1,0.4-1,1v7c0,0.6,0.4,1,1,1h1c0.6,0,1-0.4,1-1v-7C20.5,12.9,20.1,12.5,19.5,12.5z" />
+      <path d="M12.5,2.5h-1c-0.6,0-1,0.4-1,1v9c0,0.6,0.4,1,1,1h1c0.6,0,1-0.4,1-1v-9C13.5,2.9,13.1,2.5,12.5,2.5z" />
+      <path d="M5.5,8.5h-1c-0.6,0-1,0.4-1,1v10c0,0.6,0.4,1,1,1h1c0.6,0,1-0.4,1-1v-10C6.5,8.9,6.1,8.5,5.5,8.5z" />
+      <path d="M19.5,6.5h-1c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h1c0.6,0,1-0.4,1-1v-12C20.5,6.9,20.1,6.5,19.5,6.5z" />
+    </svg>
   );
 }
