@@ -107,7 +107,7 @@ export default function HeroSection() {
             className="flex justify-center md:justify-end order-first md:order-last"
           >
             <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
-              <div className="absolute inset-0 z-0 scale-150">
+              <div className="absolute inset-0 z-0">
                 <Orb
                   hoverIntensity={0.5}
                   rotateOnHover={true}

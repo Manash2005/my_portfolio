@@ -96,9 +96,15 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
       return vec4(colorIn.rgb / (a + 1e-5), a);
     }
 
-    const vec3 baseColor1 = vec3(0.611765, 0.262745, 0.996078);
-    const vec3 baseColor2 = vec3(0.298039, 0.760784, 0.913725);
-    const vec3 baseColor3 = vec3(0.062745, 0.078431, 0.600000);
+    // You can change the orb's colors here.
+    // The values are in RGB format, from 0.0 to 1.0.
+    // For example, to get a color from a hex code like #FF0000 (red),
+    // you would divide each component by 255: R=255/255=1.0, G=0/255=0.0, B=0/255=0.0
+    // So, vec3(1.0, 0.0, 0.0) would be red.
+    const vec3 baseColor1 = vec3(0.611765, 0.262745, 0.996078); // A purple color
+    const vec3 baseColor2 = vec3(0.298039, 0.760784, 0.913725); // A cyan color
+    const vec3 baseColor3 = vec3(0.062745, 0.078431, 0.600000); // A dark blue color
+
     const float innerRadius = 0.6;
     const float noiseScale = 0.65;
 
