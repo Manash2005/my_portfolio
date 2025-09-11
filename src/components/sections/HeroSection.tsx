@@ -8,6 +8,7 @@ import { Download, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import data from '@/lib/data.json';
+import Orb from '@/components/Orb';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -105,15 +106,25 @@ export default function HeroSection() {
             variants={itemVariants} 
             className="flex justify-center md:justify-end order-first md:order-last"
           >
-            <Image
-              src={heroImage.src}
-              alt={heroImage.alt}
-              width={heroImage.width}
-              height={heroImage.height}
-              data-ai-hint={heroImage.hint}
-              className="rounded-full object-cover w-[250px] h-[250px] md:w-[400px] md:h-[400px] border-4 border-primary/50"
-              priority
-            />
+            <div className="relative w-[250px] h-[250px] md:w-[400px] md:h-[400px]">
+              <div className="absolute inset-0 z-0 scale-150">
+                <Orb
+                  hoverIntensity={0.5}
+                  rotateOnHover={true}
+                  hue={240}
+                  forceHoverState={false}
+                />
+              </div>
+              <Image
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={heroImage.width}
+                height={heroImage.height}
+                data-ai-hint={heroImage.hint}
+                className="relative z-10 rounded-full object-cover w-full h-full border-4 border-primary/50"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </motion.div>
