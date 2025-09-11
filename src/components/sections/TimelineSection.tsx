@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Badge } from '@/components/ui/badge';
-import { DoodleLine } from '../icons/DoodleLine';
 import { Award, Code, GraduationCap, Mic } from 'lucide-react';
 
 const timelineEvents = [
@@ -75,7 +74,7 @@ const itemVariants = {
 
 export default function TimelineSection() {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' }, [
-    Autoplay({ delay: 4000, stopOnInteraction: false }),
+    Autoplay({ delay: 4000, stopOnInteraction: true }),
   ]);
 
   return (
@@ -95,34 +94,34 @@ export default function TimelineSection() {
       </div>
 
       <div className="embla" ref={emblaRef}>
-        <div className="embla__container relative pb-16 pt-16">
+        <div className="embla__container relative py-16">
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/30" />
           {timelineEvents.map((event, index) => (
-            <div className="embla__slide flex-grow-0 flex-shrink-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-8" key={index}>
+            <div className="embla__slide flex-grow-0 flex-shrink-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 px-4" key={index}>
               <motion.div
                 variants={itemVariants}
                 className="relative h-full"
               >
-                <div className={`relative flex flex-col items-center ${index % 2 === 0 ? 'mb-16' : 'mt-16'}`}>
-                  {/* Point and line */}
-                  <div className={`absolute w-px bg-primary/50 ${index % 2 === 0 ? 'top-0 h-1/2' : 'bottom-0 h-1/2'}`} />
-                  <div className={`absolute z-10 w-8 h-8 bg-primary/20 text-primary rounded-full p-1.5 border-2 border-primary/50 flex items-center justify-center top-1/2 -translate-y-1/2`}>
-                      {event.icon}
+                <div className={`flex items-center ${index % 2 === 0 ? 'flex-col-reverse' : 'flex-col'}`}>
+                  {/* Content Box */}
+                  <div className={`w-full p-4 my-4 rounded-lg bg-card/50 border border-border text-center ${index % 2 === 0 ? 'mt-8' : 'mb-8'}`}>
+                    <p className="font-semibold text-primary">{event.date}</p>
+                    <h3 className="font-headline font-bold text-lg text-foreground mt-1">{event.title}</h3>
+                    <p className="mt-1 text-muted-foreground text-sm">{event.description}</p>
+                    <Badge variant="secondary" className="mt-3">{event.category}</Badge>
                   </div>
                   
-                  {/* Content */}
-                  <div className={`w-full ${index % 2 === 0 ? 'absolute bottom-[calc(50%+2rem)]' : 'absolute top-[calc(50%+2rem)]'}`}>
-                      <div className="text-center">
-                          <p className="font-semibold text-lg">{event.date}</p>
-                          <h3 className="font-headline font-bold text-xl text-foreground mt-2">{event.title}</h3>
-                          <p className="mt-1 text-muted-foreground text-sm">{event.description}</p>
-                          <Badge variant="secondary" className="mt-3">{event.category}</Badge>
-                      </div>
+                  {/* Connector and Icon */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-8 bg-primary/30" />
+                    <div className="z-10 w-10 h-10 bg-background border-2 border-primary/50 text-primary rounded-full p-1.5 flex items-center justify-center">
+                      {event.icon}
+                    </div>
                   </div>
                 </div>
               </motion.div>
             </div>
           ))}
-          <DoodleLine />
         </div>
       </div>
     </motion.section>
