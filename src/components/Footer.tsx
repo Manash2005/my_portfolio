@@ -2,8 +2,8 @@
 "use client";
 
 import { Github, Linkedin, Instagram } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import data from '@/lib/data.json';
+import SocialButton from '@/components/SocialButton';
 
 const iconMap = {
   GitHub: Github,
@@ -24,16 +24,17 @@ export default function Footer() {
             {socialLinks.map((link) => {
               const Icon = iconMap[link.name as keyof typeof iconMap] || Github;
               return (
-                <Button key={link.name} variant="ghost" size="icon" asChild>
-                  <a 
-                    href={link.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label={link.name}
-                  >
-                    <Icon className="h-6 w-6 text-foreground transition-colors hover:text-primary" />
-                  </a>
-                </Button>
+                <a 
+                  key={link.name}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label={link.name}
+                >
+                  <SocialButton platform={link.name as keyof typeof iconMap}>
+                    <Icon className="h-6 w-6" />
+                  </SocialButton>
+                </a>
               );
             })}
           </div>

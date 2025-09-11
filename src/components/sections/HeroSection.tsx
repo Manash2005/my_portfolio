@@ -8,6 +8,7 @@ import { Download, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import data from '@/lib/data.json';
+import SocialButton from '@/components/SocialButton';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -87,16 +88,17 @@ export default function HeroSection() {
               {socialLinks.map((link) => {
                 const Icon = iconMap[link.name as keyof typeof iconMap] || Github;
                 return (
-                  <Button key={link.name} variant="outline" size="icon" className="rounded-full border-foreground/50 hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110" asChild>
-                    <a 
-                      href={link.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      aria-label={link.name}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </a>
-                  </Button>
+                  <a 
+                    key={link.name}
+                    href={link.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label={link.name}
+                  >
+                    <SocialButton platform={link.name as keyof typeof iconMap}>
+                       <Icon className="h-5 w-5" />
+                    </SocialButton>
+                  </a>
                 )
               })}
             </motion.div>

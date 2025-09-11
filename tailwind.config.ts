@@ -71,6 +71,15 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        social: {
+          github: '#181818',
+          linkedin: '#0077b5',
+          instagram: {
+            1: '#f09433',
+            2: '#e6683c',
+            3: '#bc1888',
+          },
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
