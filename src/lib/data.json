@@ -1,0 +1,93 @@
+
+{
+  "name": "Manash",
+  "title": "Developer",
+  "resumeUrl": "/resume.pdf",
+  "contactEmail": "swainm099@gmail.com",
+  "socialLinks": [
+    { "name": "GitHub", "url": "https://github.com/Manash2005" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/manash-swain" },
+    { "name": "Instagram", "url": "https://www.instagram.com/manashhh_22?igsh=N2d0OWdya252MmF4" }
+  ],
+  "education": [
+    {
+      "institution": "PW Institute of Innovation",
+      "location": "Bengaluru",
+      "program": "Skills Programme",
+      "semester": "Third Semester",
+      "logo": "/images/pw-logo.png",
+      "url": "https://www.pwioi.com/"
+    },
+    {
+      "institution": "BITS Pilani (Online)",
+      "location": "Online",
+      "program": "BCA Degree",
+      "semester": "Second Semester",
+      "logo": "/images/bits-pilani-logo.webp",
+      "url": "https://www.bits-pilani.ac.in/"
+    }
+  ],
+  "codingProfiles": [
+    {
+      "platform": "LeetCode",
+      "username": "manash_swain",
+      "url": "https://leetcode.com/u/manash_swain/",
+      "stats": [
+        { "label": "Problems Solved", "value": "150+" },
+        { "label": "Contests", "value": "10+" }
+      ]
+    },
+    {
+      "platform": "GeeksForGeeks",
+      "username": "swainm099",
+      "url": "https://www.geeksforgeeks.org/user/swainm099/",
+      "stats": [
+        { "label": "Problems Solved", "value": "200+" },
+        { "label": "Coding Score", "value": "500+" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Book Heaven",
+      "description": "An online books review landing page built with fundamental web technologies.",
+      "tags": ["HTML", "CSS", "Bootstrap"],
+      "liveUrl": "https://manash2005.github.io/bookhevan/",
+      "githubUrl": "https://github.com/Manash2005/bookhevan",
+      "image": "/images/book-heaven.png",
+      "hint": "books review website"
+    },
+    {
+      "name": "Student Portal",
+      "description": "A comprehensive portal for students to manage their academic information, built with core web technologies.",
+      "tags": ["HTML", "CSS", "JavaScript"],
+      "liveUrl": "https://suprakash-dhar-pw.github.io/PW_End_Sem_Project/",
+      "githubUrl": "https://github.com/Suprakash-dhar-PW/PW_End_Sem_Project",
+      "image": "/images/student-portal.png",
+      "hint": "student portal dashboard"
+    },
+    {
+      "name": "EcoReborn",
+      "description": "An e-commerce site for organic fertilizers and home decor made from waste materials.",
+      "tags": ["HTML", "CSS", "JavaScript"],
+      "liveUrl": "https://manash2005.github.io/EcoReborn/",
+      "githubUrl": "https://github.com/Manash2005/EcoReborn/",
+      "image": "/images/ecoreborn.png",
+      "hint": "eco-friendly products online store"
+    }
+  ],
+  "skills": [
+    { "name": "HTML", "icon": "HtmlIcon" },
+    { "name": "CSS", "icon": "CssIcon" },
+    { "name": "Bootstrap", "icon": "BootstrapIcon" },
+    { "name": "JavaScript", "icon": "JavaScriptIcon" },
+    { "name": "Java", "icon": "JavaIcon" },
+    { "name": "C", "icon": "CIcon" },
+    { "name": "C++", "icon": "CppIcon" },
+    { "name": "Python", "icon": "PythonIcon" },
+    { "name": "MySQL", "icon": "MySqlIcon" },
+    { "name": "Canva", "icon": "CanvaIcon" },
+    { "name": "MS Excel", "icon": "ExcelIcon" },
+    { "name": "Google Sheets", "icon": "GoogleSheetsIcon" }
+  ]
+}

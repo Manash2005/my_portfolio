@@ -1,7 +1,9 @@
+
 import { Resend } from 'resend';
+import data from '@/lib/data.json';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const toEmail = "swainm099@gmail.com";
+const toEmail = data.contactEmail;
 // NOTE: Resend requires a verified domain for the `from` address.
 // For testing, you can use the default `onboarding@resend.dev` address.
 const fromEmail = "onboarding@resend.dev"; 

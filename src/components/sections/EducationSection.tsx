@@ -1,28 +1,13 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap } from 'lucide-react';
+import data from '@/lib/data.json';
 
-const educationData = [
-  {
-    institution: 'PW Institute of Innovation',
-    location: 'Bengaluru',
-    program: 'Skills Programme',
-    semester: 'Third Semester',
-    logo: "/images/pw-logo.png",
-    url: 'https://www.pwioi.com/',
-  },
-  {
-    institution: 'BITS Pilani (Online)',
-    location: 'Online',
-    program: 'BCA Degree',
-    semester: 'Second Semester',
-    logo: "/images/bits-pilani-logo.webp",
-    url: 'https://www.bits-pilani.ac.in/',
-  },
-];
+const educationData = data.education;
 
 const containerVariants = {
     hidden: { opacity: 0 },

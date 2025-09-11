@@ -1,36 +1,28 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { 
-  HtmlIcon, 
-  CssIcon, 
-  JavaScriptIcon, 
-  BootstrapIcon, 
-  CIcon, 
-  CppIcon, 
-  PythonIcon, 
-  MySqlIcon,
-  JavaIcon,
-  CanvaIcon,
-  ExcelIcon,
-  GoogleSheetsIcon
-} from '@/components/icons';
+import * as Icons from '@/components/icons';
+import data from '@/lib/data.json';
+import { FC } from 'react';
 
-const skills = [
-  { name: 'HTML', icon: <HtmlIcon /> },
-  { name: 'CSS', icon: <CssIcon /> },
-  { name: 'Bootstrap', icon: <BootstrapIcon /> },
-  { name: 'JavaScript', icon: <JavaScriptIcon /> },
-  { name: 'Java', icon: <JavaIcon /> },
-  { name: 'C', icon: <CIcon /> },
-  { name: 'C++', icon: <CppIcon /> },
-  { name: 'Python', icon: <PythonIcon /> },
-  { name: 'MySQL', icon: <MySqlIcon /> },
-  { name: 'Canva', icon: <CanvaIcon /> },
-  { name: 'MS Excel', icon: <ExcelIcon /> },
-  { name: 'Google Sheets', icon: <GoogleSheetsIcon /> },
-];
+const skills = data.skills;
+
+const iconComponents: Record<string, FC> = {
+  HtmlIcon: Icons.HtmlIcon,
+  CssIcon: Icons.CssIcon,
+  BootstrapIcon: Icons.BootstrapIcon,
+  JavaScriptIcon: Icons.JavaScriptIcon,
+  JavaIcon: Icons.JavaIcon,
+  CIcon: Icons.CIcon,
+  CppIcon: Icons.CppIcon,
+  PythonIcon: Icons.PythonIcon,
+  MySqlIcon: Icons.MySqlIcon,
+  CanvaIcon: Icons.CanvaIcon,
+  ExcelIcon: Icons.ExcelIcon,
+  GoogleSheetsIcon: Icons.GoogleSheetsIcon,
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -59,22 +51,25 @@ export default function SkillsSection() {
         viewport={{ once: true, amount: 0.2 }}
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
       >
-        {skills.map((skill) => (
-          <motion.div 
-            key={skill.name} 
-            variants={itemVariants}
-            className="group"
-          >
-            <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary">
-              <CardContent className="flex flex-col items-center justify-center p-6">
-                <div className="h-10 w-10 flex items-center justify-center">
-                  {skill.icon}
-                </div>
-                <p className="mt-4 font-semibold text-center text-foreground">{skill.name}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        {skills.map((skill) => {
+          const IconComponent = iconComponents[skill.icon];
+          return (
+            <motion.div 
+              key={skill.name} 
+              variants={itemVariants}
+              className="group"
+            >
+              <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary">
+                <CardContent className="flex flex-col items-center justify-center p-6">
+                  <div className="h-10 w-10 flex items-center justify-center">
+                    {IconComponent ? <IconComponent /> : null}
+                  </div>
+                  <p className="mt-4 font-semibold text-center text-foreground">{skill.name}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
       </motion.div>
     </section>
   );

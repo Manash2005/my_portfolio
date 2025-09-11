@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
@@ -6,36 +7,9 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
+import data from '@/lib/data.json';
 
-const projects = [
-  { 
-    name: 'Book Heaven', 
-    description: 'An online books review landing page built with fundamental web technologies.', 
-    tags: ['HTML', 'CSS' , 'Bootstrap'], 
-    liveUrl: 'https://manash2005.github.io/bookhevan/', 
-    githubUrl: 'https://github.com/Manash2005/bookhevan', 
-    image: '/images/book-heaven.png', 
-    hint: 'books review website' 
-  },
-  { 
-    name: 'Student Portal', 
-    description: 'A comprehensive portal for students to manage their academic information, built with core web technologies.', 
-    tags: ['HTML', 'CSS', 'JavaScript'], 
-    liveUrl: 'https://suprakash-dhar-pw.github.io/PW_End_Sem_Project/', 
-    githubUrl: 'https://github.com/Suprakash-Dhar-PW/PW_End_Sem_Project', 
-    image: '/images/student-portal.png', 
-    hint: 'student portal dashboard' 
-  },
-  {
-    name: 'EcoReborn',
-    description: 'An e-commerce site for organic fertilizers and home decor made from waste materials.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://manash2005.github.io/EcoReborn/',
-    githubUrl: 'https://github.com/Manash2005/EcoReborn/',
-    image: '/images/ecoreborn.png',
-    hint: 'eco-friendly products online store'
-  }
-];
+const projects = data.projects;
 
 const containerVariants = {
     hidden: { opacity: 0 },

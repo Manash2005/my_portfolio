@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
@@ -6,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Download, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import data from '@/lib/data.json';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,17 +22,19 @@ const itemVariants = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 };
 
-const socialLinks = [
-  { name: 'GitHub', icon: Github, url: 'https://github.com/Manash2005' },
-  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/manash-swain' },
-  { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/manashhh_22?igsh=N2d0OWdya252MmF4' },
-];
+const iconMap = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Instagram: Instagram,
+};
+
+const { name, title, resumeUrl, socialLinks } = data;
 
 export default function HeroSection() {
   const { hero: heroImage } = placeholderImages;
   
   const [text] = useTypewriter({
-    words: ["Hi, I'm Manash"],
+    words: [`Hi, I'm ${name}`],
     loop: 1,
     typeSpeed: 120,
     deleteSpeed: 80,
@@ -60,12 +64,12 @@ export default function HeroSection() {
               variants={itemVariants}
               className="mt-4 font-headline text-lg sm:text-xl md:text-2xl text-muted-foreground"
             >
-              Developer
+              {title}
             </motion.p>
             
             <motion.div variants={itemVariants} className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="text-white font-semibold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-[#E43636] to-[#3B060A] btn-glare">
-                <a href="/resume.pdf" download>
+                <a href={resumeUrl} download>
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </a>
@@ -79,18 +83,21 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.div variants={itemVariants} className="mt-8 flex gap-4">
-              {socialLinks.map((link) => (
-                <Button key={link.name} variant="outline" size="icon" className="rounded-full border-foreground/50 hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110" asChild>
-                  <a 
-                    href={link.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label={link.name}
-                  >
-                    <link.icon className="h-5 w-5" />
-                  </a>
-                </Button>
-              ))}
+              {socialLinks.map((link) => {
+                const Icon = iconMap[link.name as keyof typeof iconMap] || Github;
+                return (
+                  <Button key={link.name} variant="outline" size="icon" className="rounded-full border-foreground/50 hover:border-primary hover:bg-primary/10 hover:text-primary transition-all duration-300 transform hover:scale-110" asChild>
+                    <a 
+                      href={link.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      aria-label={link.name}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                )
+              })}
             </motion.div>
           </div>
           <motion.div 

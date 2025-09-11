@@ -1,34 +1,19 @@
+
 "use client";
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { LeetCodeIcon } from '../icons/LeetCodeIcon';
 import { GeeksForGeeksIcon } from '../icons/GeeksForGeeksIcon';
+import data from '@/lib/data.json';
 
-const profileData = [
-  {
-    platform: 'LeetCode',
-    username: 'manash_swain',
-    url: 'https://leetcode.com/u/manash_swain/',
-    icon: <LeetCodeIcon />,
-    stats: [
-      { label: 'Problems Solved', value: '150+' },
-      { label: 'Contests', value: '10+' },
-    ],
-  },
-  {
-    platform: 'GeeksForGeeks',
-    username: 'swainm099',
-    url: 'https://www.geeksforgeeks.org/user/swainm099/',
-    icon: <GeeksForGeeksIcon />,
-    stats: [
-      { label: 'Problems Solved', value: '200+' },
-      { label: 'Coding Score', value: '500+' },
-    ],
-  },
-];
+const iconMap = {
+  LeetCode: <LeetCodeIcon />,
+  GeeksForGeeks: <GeeksForGeeksIcon />,
+};
+
+const profileData = data.codingProfiles;
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,7 +57,7 @@ export default function CodingProfilesSection() {
                 <CardHeader className="flex flex-row items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="flex-shrink-0 rounded-lg p-2 flex items-center justify-center w-[64px] h-[64px]">
-                      {profile.icon}
+                      {iconMap[profile.platform as keyof typeof iconMap]}
                     </div>
                     <div>
                       <CardTitle className="font-headline text-xl text-foreground group-hover:text-accent transition-colors">{profile.platform}</CardTitle>
