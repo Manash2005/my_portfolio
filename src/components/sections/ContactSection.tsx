@@ -12,6 +12,9 @@ import { useToast } from '@/hooks/use-toast';
 import { submitContactForm } from '@/lib/actions';
 import { Loader2, Send } from 'lucide-react';
 import { useState } from 'react';
+import data from '@/lib/data.json';
+
+const { contact: content } = data.pageContent;
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -45,22 +48,22 @@ export default function ContactSection() {
 
       if (!result.errors) {
         toast({
-          title: "Message Sent!",
-          description: "Thanks for reaching out. I'll get back to you soon.",
+          title: content.toast.success.title,
+          description: content.toast.success.description,
           variant: "default",
         });
         form.reset();
       } else {
         toast({
-          title: "Uh oh! Something went wrong.",
-          description: result.message || "There was a problem with your submission.",
+          title: content.toast.error.title,
+          description: result.message || content.toast.error.description,
           variant: "destructive",
         });
       }
     } catch (error) {
        toast({
-          title: "Error",
-          description: "An unexpected error occurred. Please try again.",
+          title: content.toast.error.title,
+          description: content.toast.error.unexpected,
           variant: "destructive",
         });
     } finally {
@@ -78,8 +81,8 @@ export default function ContactSection() {
       className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="text-center mb-12">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Let's Connect</h2>
-        <p className="mt-2 text-lg text-muted-foreground">Have a question or want to work together? Drop me a message.</p>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
+        <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
       </div>
 
       <div className="max-w-2xl mx-auto">
@@ -90,9 +93,9 @@ export default function ContactSection() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{content.form.name.label}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your Name" {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
+                    <Input placeholder={content.form.name.placeholder} {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -103,9 +106,9 @@ export default function ContactSection() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{content.form.email.label}</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="your@email.com" {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
+                    <Input type="email" placeholder={content.form.email.placeholder} {...field} className="bg-secondary border-border focus:ring-primary focus:border-primary" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -116,9 +119,9 @@ export default function ContactSection() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>{content.form.message.label}</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Tell me what's on your mind..." {...field} className="bg-secondary border-border min-h-[150px] focus:ring-primary focus:border-primary" />
+                    <Textarea placeholder={content.form.message.placeholder} {...field} className="bg-secondary border-border min-h-[150px] focus:ring-primary focus:border-primary" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -126,7 +129,7 @@ export default function ContactSection() {
             />
             <Button type="submit" disabled={isSubmitting} className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-glow-accent">
               {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? content.form.submitButton.submittingText : content.form.submitButton.defaultText}
             </Button>
           </form>
         </Form>

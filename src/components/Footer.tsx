@@ -14,6 +14,7 @@ const iconMap = {
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { socialLinks, name } = data;
+  const { footer } = data.pageContent;
 
   return (
     <footer className="bg-card/50 border-t border-primary/10 mt-20">
@@ -37,8 +38,8 @@ export default function Footer() {
             })}
           </div>
           <div className="text-center text-muted-foreground">
-            <p>Thanks for scrolling ✨ Built with 💙 by {name}</p>
-            <p>&copy; {currentYear} {name}. All rights reserved.</p>
+            <p>{footer.thanksText.replace('{name}', name)}</p>
+            <p>{footer.copyrightText.replace('{year}', currentYear.toString()).replace('{name}', name)}</p>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { GraduationCap } from 'lucide-react';
 import data from '@/lib/data.json';
 
 const educationData = data.education;
+const { education: content } = data.pageContent;
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -33,8 +34,8 @@ export default function EducationSection() {
       className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="text-center mb-16">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">My Learning Journey</h2>
-        <p className="mt-2 text-lg text-muted-foreground">Where I'm currently studying and what I'm learning.</p>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
+        <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
       </div>
 
       <motion.div 

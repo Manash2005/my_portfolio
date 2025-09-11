@@ -29,12 +29,13 @@ const iconMap = {
 };
 
 const { name, title, resumeUrl, socialLinks } = data;
+const { hero: content } = data.pageContent;
 
 export default function HeroSection() {
   const { hero: heroImage } = placeholderImages;
   
   const [text] = useTypewriter({
-    words: [`Hi, I'm ${name}`],
+    words: [content.typewriterText.replace('{name}', name)],
     loop: 1,
     typeSpeed: 120,
     deleteSpeed: 80,
@@ -71,13 +72,13 @@ export default function HeroSection() {
               <Button size="lg" asChild className="text-white font-semibold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-[#E43636] to-[#3B060A] btn-glare">
                 <a href={resumeUrl} download>
                   <Download className="mr-2 h-5 w-5" />
-                  Download Resume
+                  {content.buttons.downloadResume}
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild className="hover:bg-secondary hover:text-secondary-foreground">
                 <a href="#contact">
                   <Send className="mr-2 h-5 w-5" />
-                  Contact Me
+                  {content.buttons.contactMe}
                 </a>
               </Button>
             </motion.div>

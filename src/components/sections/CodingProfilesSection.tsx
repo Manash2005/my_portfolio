@@ -14,6 +14,7 @@ const iconMap = {
 };
 
 const profileData = data.codingProfiles;
+const { codingProfiles: content } = data.pageContent;
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,8 +40,8 @@ export default function CodingProfilesSection() {
       className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="text-center mb-16">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Coding Profiles</h2>
-        <p className="mt-2 text-lg text-muted-foreground">My activity on competitive programming platforms.</p>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
+        <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
       </div>
 
       <motion.div 

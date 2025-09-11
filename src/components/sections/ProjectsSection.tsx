@@ -10,6 +10,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import data from '@/lib/data.json';
 
 const projects = data.projects;
+const { projects: content } = data.pageContent;
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,8 +29,8 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Things I’ve Built</h2>
-        <p className="mt-2 text-lg text-muted-foreground">A selection of my favorite projects.</p>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
+        <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
       </div>
       <motion.div
         variants={containerVariants}
@@ -67,12 +68,12 @@ export default function ProjectsSection() {
               <CardFooter className="flex justify-end gap-2">
                 <Button variant="outline" size="sm" asChild>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" /> GitHub
+                    <Github className="mr-2 h-4 w-4" /> {content.buttons.github}
                   </a>
                 </Button>
                 <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                    <ExternalLink className="mr-2 h-4 w-4" /> {content.buttons.liveDemo}
                   </a>
                 </Button>
               </CardFooter>

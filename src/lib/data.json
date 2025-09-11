@@ -1,19 +1,31 @@
-
 {
   "name": "Manash",
-  "title": "Developer",
-  "resumeUrl": "/resume.pdf",
+  "title": "Full Stack Developer",
+  "resumeUrl": "/Manash Swain.pdf",
   "contactEmail": "swainm099@gmail.com",
+  "meta": {
+    "title": "Manash's Portfolio",
+    "description": "The personal portfolio of Manash, a passionate Full Stack Developer."
+  },
   "socialLinks": [
-    { "name": "GitHub", "url": "https://github.com/Manash2005" },
-    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/manash-swain" },
-    { "name": "Instagram", "url": "https://www.instagram.com/manashhh_22?igsh=N2d0OWdya252MmF4" }
+    {
+      "name": "GitHub",
+      "url": "https://github.com/Manash2005"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/manash-swain"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/manashhh_22?igsh=N2d0OWdya252MmF4"
+    }
   ],
   "education": [
     {
       "institution": "PW Institute of Innovation",
       "location": "Bengaluru",
-      "program": "Skills Programme",
+      "program": "B.Tech in CS and AI",
       "semester": "Third Semester",
       "logo": "/images/pw-logo.png",
       "url": "https://www.pwioi.com/"
@@ -30,20 +42,32 @@
   "codingProfiles": [
     {
       "platform": "LeetCode",
-      "username": "manash_swain",
-      "url": "https://leetcode.com/u/manash_swain/",
+      "username": "Manash_22",
+      "url": "https://leetcode.com/u/Manash_22/",
       "stats": [
-        { "label": "Problems Solved", "value": "150+" },
-        { "label": "Contests", "value": "10+" }
+        {
+          "label": "Problems Solved",
+          "value": "150+"
+        },
+        {
+          "label": "Contest Rating",
+          "value": "1600+"
+        }
       ]
     },
     {
       "platform": "GeeksForGeeks",
-      "username": "swainm099",
-      "url": "https://www.geeksforgeeks.org/user/swainm099/",
+      "username": "swainlfei",
+      "url": "https://www.geeksforgeeks.org/user/swainlfei/",
       "stats": [
-        { "label": "Problems Solved", "value": "200+" },
-        { "label": "Coding Score", "value": "500+" }
+        {
+          "label": "Problems Solved",
+          "value": "200+"
+        },
+        {
+          "label": "Coding Score",
+          "value": "700+"
+        }
       ]
     }
   ],
@@ -51,7 +75,11 @@
     {
       "name": "Book Heaven",
       "description": "An online books review landing page built with fundamental web technologies.",
-      "tags": ["HTML", "CSS", "Bootstrap"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ],
       "liveUrl": "https://manash2005.github.io/bookhevan/",
       "githubUrl": "https://github.com/Manash2005/bookhevan",
       "image": "/images/book-heaven.png",
@@ -60,7 +88,11 @@
     {
       "name": "Student Portal",
       "description": "A comprehensive portal for students to manage their academic information, built with core web technologies.",
-      "tags": ["HTML", "CSS", "JavaScript"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "liveUrl": "https://suprakash-dhar-pw.github.io/PW_End_Sem_Project/",
       "githubUrl": "https://github.com/Suprakash-dhar-PW/PW_End_Sem_Project",
       "image": "/images/student-portal.png",
@@ -69,7 +101,11 @@
     {
       "name": "EcoReborn",
       "description": "An e-commerce site for organic fertilizers and home decor made from waste materials.",
-      "tags": ["HTML", "CSS", "JavaScript"],
+      "tags": [
+        "HTML",
+        "CSS",
+      "JavaScript"
+      ],
       "liveUrl": "https://manash2005.github.io/EcoReborn/",
       "githubUrl": "https://github.com/Manash2005/EcoReborn/",
       "image": "/images/ecoreborn.png",
@@ -77,17 +113,129 @@
     }
   ],
   "skills": [
-    { "name": "HTML", "icon": "HtmlIcon" },
-    { "name": "CSS", "icon": "CssIcon" },
-    { "name": "Bootstrap", "icon": "BootstrapIcon" },
-    { "name": "JavaScript", "icon": "JavaScriptIcon" },
-    { "name": "Java", "icon": "JavaIcon" },
-    { "name": "C", "icon": "CIcon" },
-    { "name": "C++", "icon": "CppIcon" },
-    { "name": "Python", "icon": "PythonIcon" },
-    { "name": "MySQL", "icon": "MySqlIcon" },
-    { "name": "Canva", "icon": "CanvaIcon" },
-    { "name": "MS Excel", "icon": "ExcelIcon" },
-    { "name": "Google Sheets", "icon": "GoogleSheetsIcon" }
-  ]
+    {
+      "name": "HTML",
+      "icon": "HtmlIcon"
+    },
+    {
+      "name": "CSS",
+      "icon": "CssIcon"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "BootstrapIcon"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "JavaScriptIcon"
+    },
+    {
+      "name": "Java",
+      "icon": "JavaIcon"
+    },
+    {
+      "name": "C",
+      "icon": "CIcon"
+    },
+    {
+      "name": "C++",
+      "icon": "CppIcon"
+    },
+    {
+      "name": "Python",
+      "icon": "PythonIcon"
+    },
+    {
+      "name": "MySQL",
+      "icon": "MySqlIcon"
+    },
+    {
+      "name": "Canva",
+      "icon": "CanvaIcon"
+    },
+    {
+      "name": "MS Excel",
+      "icon": "ExcelIcon"
+    },
+    {
+      "name": "Google Sheets",
+      "icon": "GoogleSheetsIcon"
+    }
+  ],
+  "pageContent": {
+    "hero": {
+      "typewriterText": "Hi, I'm {name}",
+      "buttons": {
+        "downloadResume": "Download Resume",
+        "contactMe": "Contact Me"
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "A little bit about my journey.",
+      "description": "I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.",
+      "facts": [
+        "Creative Thinker",
+        "Fast Learner",
+        "Team Player"
+      ]
+    },
+    "education": {
+      "title": "My Learning Journey",
+      "subtitle": "Where I'm currently studying and what I'm learning."
+    },
+    "skills": {
+      "title": "My Toolkit",
+      "subtitle": "Technologies I use to build amazing things."
+    },
+    "codingProfiles": {
+      "title": "Coding Profiles",
+      "subtitle": "My activity on competitive programming platforms."
+    },
+    "projects": {
+      "title": "Things I’ve Built",
+      "subtitle": "A selection of my favorite projects.",
+      "buttons": {
+        "github": "GitHub",
+        "liveDemo": "Live Demo"
+      }
+    },
+    "contact": {
+      "title": "Let's Connect",
+      "subtitle": "Have a question or want to work together? Drop me a message.",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your Name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "your@email.com"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell me what's on your mind..."
+        },
+        "submitButton": {
+          "defaultText": "Send Message",
+          "submittingText": "Sending..."
+        }
+      },
+      "toast": {
+        "success": {
+          "title": "Message Sent!",
+          "description": "Thanks for reaching out. I'll get back to you soon."
+        },
+        "error": {
+          "title": "Uh oh! Something went wrong.",
+          "description": "There was a problem with your submission.",
+          "unexpected": "An unexpected error occurred. Please try again."
+        }
+      }
+    },
+    "footer": {
+      "thanksText": "Thanks for scrolling ✨ Built with 💙 by {name}",
+      "copyrightText": "© {year} {name}. All rights reserved."
+    }
+  }
 }

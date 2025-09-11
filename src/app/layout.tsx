@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import data from '@/lib/data.json';
 
 export const metadata: Metadata = {
-  title: 'Manash Portfolio',
-  description: 'Portfolio of Manash, a Full Stack Developer.',
+  title: data.meta.title,
+  description: data.meta.description,
 };
 
 export default function RootLayout({
