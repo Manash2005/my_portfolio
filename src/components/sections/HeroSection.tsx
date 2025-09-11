@@ -114,7 +114,7 @@ export default function HeroSection() {
                 width={heroImage.width}
                 height={heroImage.height}
                 data-ai-hint={heroImage.hint}
-                className="relative z-10 rounded-full object-cover w-full h-full border-4 border-primary/50"
+                className="relative z-10 rounded-full object-cover w-full h-full"
                 priority
               />
             </div>
