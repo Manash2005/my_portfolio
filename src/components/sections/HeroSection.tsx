@@ -103,7 +103,7 @@ export default function HeroSection() {
               width={heroImage.width}
               height={heroImage.height}
               data-ai-hint={heroImage.hint}
-              className="rounded-full object-cover border-4 border-primary/50 w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
+              className="rounded-full object-cover w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
               priority
             />
           </motion.div>
