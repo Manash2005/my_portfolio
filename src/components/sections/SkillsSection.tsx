@@ -3,11 +3,12 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import * as Icons from '@/components/icons';
 import data from '@/lib/data.json';
-import { FC, useRef } from 'react';
+import { FC, useRef, useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 const skills = data.skills;
 const { skills: content } = data.pageContent;
@@ -34,6 +35,28 @@ const itemVariants = {
 
 export default function SkillsSection() {
   const autoplayPlugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
     <section id="skills" className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card/20 rounded-xl">
@@ -44,6 +67,7 @@ export default function SkillsSection() {
 
       <div className="md:hidden">
         <Carousel
+          setApi={setApi}
           opts={{
             align: 'start',
             loop: true,
@@ -71,6 +95,19 @@ export default function SkillsSection() {
             })}
           </CarouselContent>
         </Carousel>
+        <div className="py-4 flex justify-center gap-2">
+          {Array.from({ length: count }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => api?.scrollTo(i)}
+              className={cn(
+                'h-2 w-2 rounded-full transition-all',
+                current === i ? 'w-4 bg-primary' : 'bg-primary/30'
+              )}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       <motion.div
