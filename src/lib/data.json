@@ -4,7 +4,7 @@
   "resumeUrl": "/Manash Swain.pdf",
   "contactEmail": "swainm099@gmail.com",
   "meta": {
-    "title": "Manash's Portfolio",
+    "title": "Manash Swain",
     "description": "The personal portfolio of Manash, a passionate Full Stack Developer."
   },
   "socialLinks": [
@@ -47,11 +47,11 @@
       "stats": [
         {
           "label": "Problems Solved",
-          "value": "150+"
+          "value": "60+"
         },
         {
-          "label": "Contest Rating",
-          "value": "1600+"
+          "label": "Active Days",
+          "value": "30+"
         }
       ]
     },
@@ -62,11 +62,11 @@
       "stats": [
         {
           "label": "Problems Solved",
-          "value": "200+"
+          "value": "130+"
         },
         {
           "label": "Coding Score",
-          "value": "700+"
+          "value": "130+"
         }
       ]
     }
@@ -172,13 +172,9 @@
     },
     "about": {
       "title": "About Me",
-      "subtitle": "A little bit about my journey.",
-      "description": "I'm a passionate full-stack developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.",
-      "facts": [
-        "Creative Thinker",
-        "Fast Learner",
-        "Team Player"
-      ]
+      "subtitle": "Know me 1% more",
+      "description": "I'm a passionate developer who loves building visually appealing and high-performing web apps. I enjoy blending design with code and continuously learning new technologies to create seamless digital experiences.",
+      "facts": []
     },
     "education": {
       "title": "My Learning Journey",
