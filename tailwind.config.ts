@@ -18,6 +18,7 @@ export default {
       boxShadow: {
         'glow-primary': '0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3)',
         'glow-accent': '0 0 15px hsl(var(--accent) / 0.5), 0 0 30px hsl(var(--accent) / 0.3)',
+        'glow-green': '0 0 20px hsl(120 70% 50% / 0.8), 0 0 35px hsl(120 70% 50% / 0.6)',
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -98,22 +99,11 @@ export default {
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
-        'glow-pulse': {
-          '0%, 100%': {
-            borderColor: 'hsl(var(--primary) / 0.6)',
-            boxShadow: '0 0 15px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4)',
-          },
-          '50%': {
-            borderColor: 'hsl(120 70% 50% / 0.8)',
-            boxShadow: '0 0 20px hsl(120 70% 50% / 0.8), 0 0 35px hsl(120 70% 50% / 0.6)',
-          },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'animated-gradient': 'animated-gradient 3s ease infinite',
-        'glow-pulse': 'glow-pulse 6s ease-in-out infinite',
       },
     },
   },
