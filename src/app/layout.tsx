@@ -22,7 +22,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <div className="relative isolate overflow-x-hidden">
+        <div className="relative isolate overflow-x-hidden grainy-background">
           {children}
           <Toaster />
         </div>
