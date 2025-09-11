@@ -230,7 +230,7 @@
       }
     },
     "footer": {
-      "thanksText": "Thanks for scrolling ✨ Built with 💙 by {name}",
+      "thanksText": "Thanks for scrolling Built with 💙 by {name}",
       "copyrightText": "© {year} {name}. All rights reserved."
     }
   }
