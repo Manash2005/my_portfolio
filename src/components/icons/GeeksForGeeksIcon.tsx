@@ -6,21 +6,10 @@ export function GeeksForGeeksIcon() {
       width="40"
       height="40"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
       className="text-green-500"
     >
-      <path d="M13.5,4H8C6.9,4,6,4.9,6,6v12c0,1.1,0.9,2,2,2h8c1.1,0,2-0.9,2-2V9.5L13.5,4z" />
-      <polyline points="13 4 13 10 19 10" />
-      <path d="M10.1,17.1l-1.8-1.8" />
-      <path d="M11.6,12.4l1.8,1.8" />
-      <path d="M14.2,16.5l-1.8-1.8" />
-      <path d="M12.3,13.3l1.8,1.8" />
-      <path d="M11.2,15.6l-1.8-1.8" />
-      <path d="M12.7,11.8l1.8,1.8" />
+      <path d="M19.82 2H4.18A2.18 2.18 0 0 0 2 4.18v15.64A2.18 2.18 0 0 0 4.18 22h15.64A2.18 2.18 0 0 0 22 19.82V4.18A2.18 2.18 0 0 0 19.82 2zM9.62 17.43l-3-4.52h2.2l1.9 2.87.89 1.33.87-1.33 1.9-2.87h2.2l-3.02 4.52-1.46 2.18z" />
     </svg>
   );
 }
