@@ -1,12 +1,12 @@
-"use server";
+'use server';
 
-import { z } from "zod";
-import { sendContactEmail } from "@/lib/email";
+import { z } from 'zod';
+import { sendContactEmail } from '@/lib/email';
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Invalid email address."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
+  name: z.string().min(2, 'Name must be at least 2 characters.'),
+  email: z.string().email('Invalid email address.'),
+  message: z.string().min(10, 'Message must be at least 10 characters.'),
 });
 
 export type FormState = {
@@ -23,9 +23,9 @@ export async function submitContactForm(
   formData: FormData
 ): Promise<FormState> {
   const validatedFields = contactSchema.safeParse({
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message"),
+    name: formData.get('name'),
+    email: formData.get('email'),
+    message: formData.get('message'),
   });
 
   if (!validatedFields.success) {
@@ -43,9 +43,9 @@ export async function submitContactForm(
       message: 'Your message has been sent successfully!',
     };
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error('Email sending error:', error);
     return {
-        message: 'Something went wrong. Please try again later.',
-    }
+      message: 'Something went wrong. Please try again later.',
+    };
   }
 }
