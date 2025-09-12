@@ -112,6 +112,29 @@
       "hint": "eco-friendly products online store"
     }
   ],
+  "miniProjects": [
+    {
+      "name": "Weather App",
+      "description": "A simple weather application that fetches and displays weather data from an API.",
+      "tags": ["JavaScript", "API", "HTML", "CSS"],
+      "githubUrl": "https://github.com/Manash2005/weather-app",
+      "liveUrl": "https://manash2005.github.io/weather-app/"
+    },
+    {
+      "name": "To-Do List",
+      "description": "A classic to-do list application to manage daily tasks. Built with React.",
+      "tags": ["React", "JavaScript", "CSS"],
+      "githubUrl": "https://github.com/Manash2005/react-todo-list",
+      "liveUrl": null
+    },
+    {
+      "name": "URL Shortener",
+      "description": "A backend service that takes a long URL and generates a short, unique link.",
+      "tags": ["Node.js", "Express", "MongoDB"],
+      "githubUrl": "https://github.com/Manash2005/url-shortener",
+      "liveUrl": null
+    }
+  ],
   "skills": [
     {
       "name": "HTML",
@@ -195,6 +218,10 @@
         "github": "GitHub",
         "liveDemo": "Live Demo"
       }
+    },
+    "miniProjects": {
+      "title": "More Things I've Built",
+      "subtitle": "A collection of smaller but fun projects."
     },
     "contact": {
       "title": "Let's Connect",
