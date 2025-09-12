@@ -8,9 +8,9 @@
   }
   :root {
     --background: 0 0% 0%;
-    --background-alt: 240 2% 8%;
+    --background-alt: 0 0% 8%;
     --foreground: 0 0% 98%;
-    --card: 240 2% 15%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
     --popover: 240 2% 13%;
     --popover-foreground: 0 0% 98%;
@@ -37,9 +37,9 @@
   
   .dark {
     --background: 0 0% 0%;
-    --background-alt: 240 2% 8%;
+    --background-alt: 0 0% 8%;
     --foreground: 0 0% 98%;
-    --card: 240 2% 15%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
     --popover: 240 2% 13%;
     --popover-foreground: 0 0% 98%;
