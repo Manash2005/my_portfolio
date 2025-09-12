@@ -23,7 +23,6 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <div className="relative isolate overflow-x-hidden">
-          <div className="aurora" />
           {children}
           <Toaster />
         </div>

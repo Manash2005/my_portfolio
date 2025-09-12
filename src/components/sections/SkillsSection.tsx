@@ -59,7 +59,7 @@ export default function SkillsSection() {
   }, [api]);
 
   return (
-    <section id="skills" className="bg-background-alt/80">
+    <section id="skills" className="bg-background-alt">
       <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
