@@ -31,6 +31,7 @@ export default function EducationSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
+      className="bg-background/80"
     >
       <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

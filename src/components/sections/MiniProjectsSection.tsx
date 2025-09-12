@@ -26,7 +26,7 @@ const itemVariants = {
 
 export default function MiniProjectsSection() {
   return (
-    <section id="mini-projects">
+    <section id="mini-projects" className="bg-background/80">
         <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
