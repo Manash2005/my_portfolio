@@ -1,7 +1,7 @@
 
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -28,29 +28,56 @@ const iconComponents: Record<string, FC> = {
   GoogleSheetsIcon: Icons.GoogleSheetsIcon,
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+const SkillCard = ({ skill }: { skill: typeof skills[0] }) => {
+  const IconComponent = iconComponents[skill.icon];
+  return (
+    <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary group-hover:-translate-y-1">
+      <CardContent className="flex flex-col items-center justify-center p-6">
+        <div className="h-10 w-10 flex items-center justify-center">
+          {IconComponent ? <IconComponent /> : null}
+        </div>
+        <p className="mt-4 font-semibold text-center text-foreground">{skill.name}</p>
+      </CardContent>
+    </Card>
+  );
 };
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
+const Row = ({ skills, progress, range }: { skills: typeof data.skills; progress: any; range: [number, number] }) => {
+    const opacity = useTransform(progress, range, [0, 1]);
+    const y = useTransform(progress, range, ['30px', '0px']);
+
+    return (
+        <motion.div style={{ opacity, y }} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            {skills.map((skill) => (
+                <div key={skill.name} className="group">
+                    <SkillCard skill={skill} />
+                </div>
+            ))}
+        </motion.div>
+    );
 };
+
 
 export default function SkillsSection() {
   const autoplayPlugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+      target: targetRef,
+      offset: ['start end', 'end start'],
+  });
+
+  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+  const itemsPerRow = isDesktop ? 5 : 4; 
+  const rows = [];
+  for (let i = 0; i < skills.length; i += itemsPerRow) {
+      rows.push(skills.slice(i, i + itemsPerRow));
+  }
+  const numRows = rows.length;
+
 
   useEffect(() => {
     if (!api) {
@@ -127,33 +154,15 @@ export default function SkillsSection() {
           </div>
         </div>
 
-        <motion.div
-          className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {skills.map((skill) => {
-            const IconComponent = iconComponents[skill.icon];
-            return (
-              <motion.div
-                key={skill.name}
-                className="group"
-                variants={itemVariants}
-              >
-                <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary group-hover:-translate-y-1">
-                  <CardContent className="flex flex-col items-center justify-center p-6">
-                    <div className="h-10 w-10 flex items-center justify-center">
-                      {IconComponent ? <IconComponent /> : null}
-                    </div>
-                    <p className="mt-4 font-semibold text-center text-foreground">{skill.name}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        <div className="hidden md:flex flex-col gap-8" ref={targetRef}>
+            {rows.map((row, i) => {
+                const rangeStart = 0.05 + i * 0.1;
+                const rangeEnd = 0.15 + i * 0.1;
+                return (
+                    <Row key={i} skills={row} progress={scrollYProgress} range={[rangeStart, rangeEnd]} />
+                );
+            })}
+        </div>
       </div>
     </section>
   );
