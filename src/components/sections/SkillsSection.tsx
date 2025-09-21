@@ -40,7 +40,7 @@ export default function SkillsSection() {
     offset: ['start end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
   
   useEffect(() => {
     if (!api) {
@@ -62,7 +62,7 @@ export default function SkillsSection() {
   }, [api]);
 
   return (
-    <motion.section
+    <section
       id="skills"
       ref={targetRef}
       className="bg-background-alt"
@@ -124,7 +124,7 @@ export default function SkillsSection() {
             const middleIndex = Math.floor(skills.length / 2);
             const x = useTransform(
               scrollYProgress,
-              [0.2, 0.6],
+              [0.1, 0.5],
               [index < middleIndex ? '-100%' : '100%', '0%']
             );
 
@@ -147,6 +147,6 @@ export default function SkillsSection() {
           })}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
