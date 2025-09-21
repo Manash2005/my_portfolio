@@ -18,9 +18,9 @@ export default function EducationSection() {
         offset: ['start end', 'end start'],
     });
 
-    const xLeft = useTransform(scrollYProgress, [0.3, 0.6, 1], ['-100%', '0%', '0%']);
-    const xRight = useTransform(scrollYProgress, [0.3, 0.6, 1], ['100%', '0%', '0%']);
-    const opacity = useTransform(scrollYProgress, [0.3, 0.4, 0.8, 0.9], [0, 1, 1, 1]);
+    const xLeft = useTransform(scrollYProgress, [0.2, 0.5], ['-100%', '0%']);
+    const xRight = useTransform(scrollYProgress, [0.2, 0.5], ['100%', '0%']);
+    const opacity = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
 
 
   return (
@@ -80,5 +80,6 @@ export default function EducationSection() {
     </motion.section>
   );
 }
+
 
 
