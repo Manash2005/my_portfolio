@@ -18,23 +18,9 @@ export default function EducationSection() {
         offset: ['start end', 'end start'],
     });
 
-    const xLeft = useTransform(scrollYProgress, [0.3, 0.6], ['-100%', '0%']);
-    const xRight = useTransform(scrollYProgress, [0.3, 0.6], ['100%', '0%']);
-    const opacity = useTransform(scrollYProgress, [0.3, 0.4, 0.8, 0.9], [0, 1, 1, 0]);
-
-    // For the parallax effect on scroll
-    const parallaxXLeft = useTransform(scrollYProgress, [0.6, 1], ['0%', '100%']);
-    const parallaxXRight = useTransform(scrollYProgress, [0.6, 1], ['0%', '-100%']);
-
-    // Combine entry and parallax transforms
-    const combinedXLeft = useTransform(
-        scrollYProgress,
-        (v) => v < 0.6 ? xLeft.get() : parallaxXLeft.get()
-    );
-    const combinedXRight = useTransform(
-        scrollYProgress,
-        (v) => v < 0.6 ? xRight.get() : parallaxXRight.get()
-    );
+    const xLeft = useTransform(scrollYProgress, [0.3, 0.6, 1], ['-100%', '0%', '0%']);
+    const xRight = useTransform(scrollYProgress, [0.3, 0.6, 1], ['100%', '0%', '0%']);
+    const opacity = useTransform(scrollYProgress, [0.3, 0.4, 0.8, 0.9], [0, 1, 1, 1]);
 
 
   return (
@@ -55,7 +41,7 @@ export default function EducationSection() {
           {educationData.map((edu, index) => {
             const style = {
                 opacity,
-                x: index === 0 ? combinedXLeft : combinedXRight,
+                x: index === 0 ? xLeft : xRight,
             };
 
             return (
@@ -94,4 +80,5 @@ export default function EducationSection() {
     </motion.section>
   );
 }
+
 
