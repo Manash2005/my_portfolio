@@ -1,7 +1,7 @@
 
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -28,17 +28,20 @@ const iconComponents: Record<string, FC> = {
   GoogleSheetsIcon: Icons.GoogleSheetsIcon,
 };
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
-};
-
 export default function SkillsSection() {
   const autoplayPlugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
+  
   useEffect(() => {
     if (!api) {
       return;
@@ -59,7 +62,11 @@ export default function SkillsSection() {
   }, [api]);
 
   return (
-    <section id="skills" className="bg-background-alt">
+    <motion.section
+      id="skills"
+      ref={targetRef}
+      className="bg-background-alt"
+    >
       <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">{content.title}</h2>
@@ -111,19 +118,20 @@ export default function SkillsSection() {
           </div>
         </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ staggerChildren: 0.1 }}
-          className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
-        >
-          {skills.map((skill) => {
+        <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          {skills.map((skill, index) => {
             const IconComponent = iconComponents[skill.icon];
+            const middleIndex = Math.floor(skills.length / 2);
+            const x = useTransform(
+              scrollYProgress,
+              [0.2, 0.6],
+              [index < middleIndex ? '-100%' : '100%', '0%']
+            );
+
             return (
-              <motion.div 
-                key={skill.name} 
-                variants={itemVariants}
+              <motion.div
+                key={skill.name}
+                style={{ opacity, x }}
                 className="group"
               >
                 <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary">
@@ -137,8 +145,8 @@ export default function SkillsSection() {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
