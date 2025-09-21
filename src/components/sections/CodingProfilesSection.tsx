@@ -1,12 +1,13 @@
 
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 import { LeetCodeIcon } from '../icons/LeetCodeIcon';
 import { GeeksForGeeksIcon } from '../icons/GeeksForGeeksIcon';
 import data from '@/lib/data.json';
+import { useRef } from 'react';
 
 const iconMap = {
   LeetCode: <LeetCodeIcon />,
@@ -16,27 +17,21 @@ const iconMap = {
 const profileData = data.codingProfiles;
 const { codingProfiles: content } = data.pageContent;
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.3, delayChildren: 0.2 },
-    },
-};
-
-const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-};
-
 export default function CodingProfilesSection() {
+    const targetRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ['start end', 'end start'],
+    });
+
+    const xLeft = useTransform(scrollYProgress, [0.1, 0.4], ['-100%', '0%']);
+    const xRight = useTransform(scrollYProgress, [0.1, 0.4], ['100%', '0%']);
+    const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
+
   return (
     <motion.section
       id="coding-profiles"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5 }}
+      ref={targetRef}
       className="bg-background"
     >
       <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
@@ -45,15 +40,16 @@ export default function CodingProfilesSection() {
           <p className="mt-2 text-lg text-muted-foreground">{content.subtitle}</p>
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+        <div 
           className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
-          {profileData.map((profile, index) => (
-            <motion.div key={index} variants={itemVariants}>
+          {profileData.map((profile, index) => {
+             const style = {
+                opacity,
+                x: index === 0 ? xLeft : xRight,
+            };
+            return (
+            <motion.div key={index} style={style}>
               <a href={profile.url} target="_blank" rel="noopener noreferrer" className="block h-full group">
                 <Card className="h-full bg-card/50 border border-border group-hover:border-accent/50 transition-all duration-300 transform group-hover:-translate-y-2 group-hover:shadow-glow-accent">
                   <CardHeader className="flex flex-row items-center justify-between">
@@ -81,8 +77,8 @@ export default function CodingProfilesSection() {
                 </Card>
               </a>
             </motion.div>
-          ))}
-        </motion.div>
+          )})}
+        </div>
       </div>
     </motion.section>
   );
