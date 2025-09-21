@@ -62,7 +62,7 @@ export default function MiniProjectsSection() {
                         </a>
                         </Button>
                         {project.liveUrl && (
-                        <Button variant="outline" size="sm" asChild className="hover:bg-primary hover:text-primary-foreground">
+                        <Button variant="outline" size="sm" asChild className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="mr-2 h-4 w-4" /> {data.pageContent.projects.buttons.liveDemo}
                             </a>
