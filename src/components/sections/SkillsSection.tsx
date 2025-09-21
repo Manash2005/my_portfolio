@@ -1,7 +1,7 @@
 
 "use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -28,20 +28,30 @@ const iconComponents: Record<string, FC> = {
   GoogleSheetsIcon: Icons.GoogleSheetsIcon,
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 export default function SkillsSection() {
   const autoplayPlugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  
   useEffect(() => {
     if (!api) {
       return;
@@ -64,7 +74,6 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      ref={targetRef}
       className="bg-background-alt"
     >
       <div className="container mx-auto py-16 md:py-24 px-4 sm:px-6 lg:px-8">
@@ -118,23 +127,22 @@ export default function SkillsSection() {
           </div>
         </div>
 
-        <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {skills.map((skill, index) => {
+        <motion.div
+          className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {skills.map((skill) => {
             const IconComponent = iconComponents[skill.icon];
-            const middleIndex = Math.floor(skills.length / 2);
-            const x = useTransform(
-              scrollYProgress,
-              [0, 0.4],
-              [index < middleIndex ? '-100%' : '100%', '0%']
-            );
-
             return (
               <motion.div
                 key={skill.name}
-                style={{ opacity, x }}
                 className="group"
+                variants={itemVariants}
               >
-                <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary">
+                <Card className="h-full bg-secondary/50 border border-transparent transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow-primary group-hover:-translate-y-1">
                   <CardContent className="flex flex-col items-center justify-center p-6">
                     <div className="h-10 w-10 flex items-center justify-center">
                       {IconComponent ? <IconComponent /> : null}
@@ -145,7 +153,7 @@ export default function SkillsSection() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
