@@ -72,7 +72,7 @@ export default function ProjectsSection() {
                       <Github className="mr-2 h-4 w-4" /> {content.buttons.github}
                     </a>
                   </Button>
-                  <Button size="sm" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Button variant="outline" size="sm" asChild className="hover:bg-primary hover:text-primary-foreground">
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" /> {content.buttons.liveDemo}
                     </a>
