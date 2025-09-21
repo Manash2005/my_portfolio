@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useEffect, useState } from "react";
 
 export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -9,6 +11,17 @@ export default function ScrollProgress() {
     damping: 30,
     restDelta: 0.001
   });
+  const isMobile = useIsMobile();
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    // We need to use a state to avoid hydration mismatch, as useIsMobile can only run on the client.
+    setShow(isMobile);
+  }, [isMobile]);
+
+  if (!show) {
+    return null;
+  }
 
   return (
     <motion.div
