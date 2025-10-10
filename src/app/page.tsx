@@ -7,6 +7,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import CodingProfilesSection from '@/components/sections/CodingProfilesSection';
+import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <SkillsSection />
         <CodingProfilesSection />
         <ProjectsSection />
+        <ContactSection />
       </main>
       <Footer />
       <ScrollToTop />
