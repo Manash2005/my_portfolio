@@ -8,7 +8,7 @@ export function GeeksForGeeksIcon() {
       alt="GeeksForGeeks Logo"
       width={40}
       height={40}
-      className="dark:invert"
+      className="dark:invert transition-all duration-300"
     />
   );
 }

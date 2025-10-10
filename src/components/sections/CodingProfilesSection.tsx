@@ -3,7 +3,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ExternalLink, Target } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { LeetCodeIcon } from '../icons/LeetCodeIcon';
 import { GeeksForGeeksIcon } from '../icons/GeeksForGeeksIcon';
 import data from '@/lib/data.json';
@@ -18,28 +18,18 @@ const iconMap = {
 const profileData = data.codingProfiles;
 const { codingProfiles: content } = data.pageContent;
 
-const totalProblemsSolved = profileData.reduce((acc, profile) => {
-  const problemsStat = profile.stats.find(stat => stat.label === 'Problems Solved');
-  if (problemsStat) {
-    const value = parseInt(problemsStat.value.replace('+', ''), 10);
-    if (!isNaN(value)) {
-      return acc + value;
-    }
-  }
-  return acc;
-}, 0);
-
-
 const platformStyles = {
     LeetCode: {
         glow: 'hover:shadow-[0_0_20px_5px_#facc1550]',
         hoverBorder: 'group-hover:border-hover-leetcode',
-        hoverText: 'group-hover:text-hover-leetcode'
+        hoverText: 'group-hover:text-hover-leetcode',
+        logoColorFilter: 'group-hover:filter-leetcode'
     },
     GeeksForGeeks: {
         glow: 'hover:shadow-glow-green',
         hoverBorder: 'group-hover:border-hover-gfg',
-        hoverText: 'group-hover:text-hover-gfg'
+        hoverText: 'group-hover:text-hover-gfg',
+        logoColorFilter: 'group-hover:filter-gfg'
     },
 };
 
@@ -83,7 +73,7 @@ export default function CodingProfilesSection() {
                 <Card className={cn("h-full bg-card/50 border border-border transition-all duration-300 transform group-hover:-translate-y-2", styles.glow, styles.hoverBorder)}>
                   <CardHeader className="flex flex-row items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="flex-shrink-0 rounded-lg p-2 flex items-center justify-center w-[64px] h-[64px]">
+                      <div className={cn("flex-shrink-0 rounded-lg p-2 flex items-center justify-center w-[64px] h-[64px]", styles.logoColorFilter)}>
                         {iconMap[profile.platform as keyof typeof iconMap]}
                       </div>
                       <div>
@@ -106,19 +96,6 @@ export default function CodingProfilesSection() {
             </motion.div>
           )})}
         </div>
-        
-        <motion.div 
-            style={{ opacity }}
-            className="mt-8 max-w-4xl mx-auto"
-        >
-            <Card className="bg-card/50 border border-border">
-                <CardContent className="p-6 flex flex-col items-center justify-center">
-                    <Target className="h-8 w-8 text-primary mb-2" />
-                    <p className="text-3xl font-bold text-foreground">{totalProblemsSolved}+</p>
-                    <p className="text-sm text-muted-foreground">Total Problems Solved</p>
-                </CardContent>
-            </Card>
-        </motion.div>
       </div>
     </motion.section>
   );

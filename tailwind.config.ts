@@ -18,7 +18,7 @@ export default {
       boxShadow: {
         'glow-primary': '0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3)',
         'glow-accent': '0 0 15px hsl(var(--accent) / 0.5), 0 0 30px hsl(var(--accent) / 0.3)',
-        'glow-green': '0 0 20px hsl(120 70% 50% / 0.8), 0 0 35px hsl(120 70% 50% / 0.6)',
+        'glow-green': '0 0 20px hsl(145 63% 49% / 0.8), 0 0 35px hsl(145 63% 49% / 0.6)',
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -54,6 +54,8 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        'hover-leetcode': '#facc15',
+        'hover-gfg': '#22c55e',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
@@ -116,5 +118,17 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities }: { addUtilities: any }) {
+      addUtilities({
+        '.filter-leetcode': {
+          filter: 'invert(87%) sepia(53%) saturate(4591%) hue-rotate(320deg) brightness(102%) contrast(97%)',
+        },
+        '.filter-gfg': {
+          filter: 'invert(58%) sepia(91%) saturate(411%) hue-rotate(88deg) brightness(92%) contrast(87%)',
+        },
+      });
+    },
+  ],
 } satisfies Config;
