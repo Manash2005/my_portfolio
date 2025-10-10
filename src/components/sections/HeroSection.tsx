@@ -76,12 +76,6 @@ export default function HeroSection() {
                   {content.buttons.downloadResume}
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="hover:bg-secondary hover:text-secondary-foreground border-2">
-                <a href="#contact">
-                  <Send className="mr-2 h-5 w-5" />
-                  {content.buttons.contactMe}
-                </a>
-              </Button>
             </motion.div>
             
             <motion.div variants={itemVariants} className="mt-8 flex gap-4">
