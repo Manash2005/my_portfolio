@@ -20,7 +20,7 @@ const { codingProfiles: content } = data.pageContent;
 
 const platformStyles = {
     LeetCode: {
-        glow: 'hover:shadow-[0_0_20px_5px_#facc1550]',
+        glow: 'hover:shadow-[0_0_20px_5px_#FCD34D50]',
         hoverBorder: 'group-hover:border-hover-leetcode',
         hoverText: 'group-hover:text-hover-leetcode',
         logoColorFilter: 'group-hover:filter-leetcode'
