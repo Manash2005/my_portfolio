@@ -21,15 +21,26 @@ const { codingProfiles: content } = data.pageContent;
 const totalProblemsSolved = profileData.reduce((acc, profile) => {
   const problemsStat = profile.stats.find(stat => stat.label === 'Problems Solved');
   if (problemsStat) {
-    return acc + parseInt(problemsStat.value, 10);
+    const value = parseInt(problemsStat.value.replace('+', ''), 10);
+    if (!isNaN(value)) {
+      return acc + value;
+    }
   }
   return acc;
 }, 0);
 
 
-const platformGlowClasses = {
-    LeetCode: 'hover:shadow-[0_0_20px_5px_#facc1550]',
-    GeeksForGeeks: 'hover:shadow-glow-green',
+const platformStyles = {
+    LeetCode: {
+        glow: 'hover:shadow-[0_0_20px_5px_#facc1550]',
+        hoverBorder: 'group-hover:border-hover-leetcode',
+        hoverText: 'group-hover:text-hover-leetcode'
+    },
+    GeeksForGeeks: {
+        glow: 'hover:shadow-glow-green',
+        hoverBorder: 'group-hover:border-hover-gfg',
+        hoverText: 'group-hover:text-hover-gfg'
+    },
 };
 
 export default function CodingProfilesSection() {
@@ -64,19 +75,19 @@ export default function CodingProfilesSection() {
                 x: index === 0 ? xLeft : xRight,
             };
             const problemsSolvedStat = profile.stats.find(stat => stat.label === 'Problems Solved');
-            const glowClass = platformGlowClasses[profile.platform as keyof typeof platformGlowClasses] || 'hover:shadow-glow-accent';
+            const styles = platformStyles[profile.platform as keyof typeof platformStyles] || {};
 
             return (
             <motion.div key={index} style={style}>
               <a href={profile.url} target="_blank" rel="noopener noreferrer" className="block h-full group">
-                <Card className={cn("h-full bg-card/50 border border-border group-hover:border-accent/50 transition-all duration-300 transform group-hover:-translate-y-2", glowClass)}>
+                <Card className={cn("h-full bg-card/50 border border-border transition-all duration-300 transform group-hover:-translate-y-2", styles.glow, styles.hoverBorder)}>
                   <CardHeader className="flex flex-row items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div className="flex-shrink-0 rounded-lg p-2 flex items-center justify-center w-[64px] h-[64px]">
                         {iconMap[profile.platform as keyof typeof iconMap]}
                       </div>
                       <div>
-                        <CardTitle className="font-headline text-xl text-foreground group-hover:text-accent transition-colors">{profile.platform}</CardTitle>
+                        <CardTitle className={cn("font-headline text-xl text-foreground transition-colors", styles.hoverText)}>{profile.platform}</CardTitle>
                         <p className="text-sm text-muted-foreground">@{profile.username}</p>
                       </div>
                     </div>
