@@ -13,8 +13,6 @@ const navLinks = [
   { name: 'Education', href: '#education' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Mini Projects', href: '#mini-projects' },
-  { name: 'Contact', href: '#contact' },
 ];
 
 const mobileNavVariants = {
