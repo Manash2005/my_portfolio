@@ -1,6 +1,10 @@
 # Settings to manage and configure a Firebase App Hosting backend.
 # https://firebase.google.com/docs/app-hosting/configure
 
+# This comment is added to trigger a new deployment.
+# After this deployment finishes, please check the Google Cloud Console again.
+# The 'nextn-backend' service should now appear in the Services list.
+
 # ==============================================================================
 #  [INSTRUCTION FOR YOU]
 #
