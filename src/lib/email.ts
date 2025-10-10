@@ -19,7 +19,7 @@ export async function sendContactEmail(payload: ContactEmailPayload) {
   
   try {
     const { data, error } = await resend.emails.send({
-      from: `Contact Form <${fromEmail}>`,
+      from: fromEmail,
       to: [toEmail],
       subject: `New message from ${name}`,
       html: `
