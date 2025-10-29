@@ -44,7 +44,7 @@ export default function VideoEditorPage() {
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-start text-left overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-black/60 z-10" />
+            
             <video
               autoPlay
               loop
