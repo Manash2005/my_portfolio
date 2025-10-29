@@ -21,7 +21,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center md:justify-end order-first md:order-last">
-            <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full">
+            <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full shadow-glow-gray">
               <Image
                 src={heroImage.src}
                 alt={heroImage.alt}
@@ -69,4 +69,3 @@ export default function Home() {
     </div>
   );
 }
-

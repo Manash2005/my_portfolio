@@ -19,6 +19,7 @@ export default {
         'glow-primary': '0 0 15px hsl(var(--primary) / 0.5), 0 0 30px hsl(var(--primary) / 0.3)',
         'glow-accent': '0 0 15px hsl(var(--accent) / 0.5), 0 0 30px hsl(var(--accent) / 0.3)',
         'glow-green': '0 0 20px hsl(120 70% 50% / 0.8), 0 0 35px hsl(120 70% 50% / 0.6)',
+        'glow-gray': '0 0 15px hsl(0 0% 50% / 0.5), 0 0 30px hsl(0 0% 50% / 0.3)',
       },
       colors: {
         background: {
