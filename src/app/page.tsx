@@ -1,25 +1,11 @@
 
+'use client';
 import Link from 'next/link';
 import { ArrowRight, Code, Film } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import data from '@/lib/data.json';
-import { motion } from 'framer-motion';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.3, delayChildren: 0.2 },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-};
-
 
 export default function Home() {
   const { hero: heroImage } = placeholderImages;
@@ -35,14 +21,14 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center md:justify-end order-first md:order-last">
-            <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full shadow-[0_0_40px_5px_hsl(var(--primary)_/_0.4)]">
+            <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full">
               <Image
                 src={heroImage.src}
                 alt={heroImage.alt}
                 width={heroImage.width}
                 height={heroImage.height}
                 data-ai-hint={heroImage.hint}
-                className="relative z-10 rounded-full object-cover w-full h-full"
+                className="rounded-full object-cover w-full h-full"
                 priority
               />
             </div>
@@ -83,3 +69,4 @@ export default function Home() {
     </div>
   );
 }
+
