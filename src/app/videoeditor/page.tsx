@@ -72,21 +72,29 @@ export default function VideoEditorPage() {
               <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Featured Work</h2>
               <p className="mt-2 text-lg text-muted-foreground">A glimpse into my editing style.</p>
             </div>
-            <div className="max-w-4xl mx-auto">
-              <Carousel className="w-full">
+            <div className="max-w-3xl mx-auto">
+              <Carousel 
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+                className="w-full"
+              >
                 <CarouselContent>
                   {videos.map((videoIframe, index) => (
-                    <CarouselItem key={index}>
-                      <div
-                        className="relative w-full shadow-2xl shadow-accent/20 rounded-lg overflow-hidden border border-accent/50"
-                        style={{
-                          paddingTop: '56.25%', /* 16:9 Aspect Ratio */
-                        }}
-                      >
+                    <CarouselItem key={index} className="md:basis-5/6 lg:basis-4/5">
+                      <div className="p-1">
                         <div
-                          className="absolute top-0 left-0 w-full h-full"
-                          dangerouslySetInnerHTML={{ __html: videoIframe }}
-                        />
+                          className="relative w-full shadow-2xl shadow-accent/20 rounded-lg overflow-hidden border border-accent/50"
+                          style={{
+                            paddingTop: '56.25%', /* 16:9 Aspect Ratio */
+                          }}
+                        >
+                          <div
+                            className="absolute top-0 left-0 w-full h-full"
+                            dangerouslySetInnerHTML={{ __html: videoIframe }}
+                          />
+                        </div>
                       </div>
                     </CarouselItem>
                   ))}
