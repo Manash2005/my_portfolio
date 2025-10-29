@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 
 export default function VideoEditorPage() {
-  const videoIframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/XH92M1qWbX4?si=CpyutJgk9c0QejXC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  const videoIframe = `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/XH92M1qWbX4?si=CpyutJgk9c0QejXC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
 
   const skills = [
     { name: 'Adobe Premiere Pro', icon: <Video className="h-8 w-8 text-accent" /> },
