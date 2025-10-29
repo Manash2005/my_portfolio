@@ -6,9 +6,19 @@ import { ArrowLeft, Video, Clapperboard, MonitorPlay } from 'lucide-react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function VideoEditorPage() {
-  const videoIframe = `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/XH92M1qWbX4?si=CpyutJgk9c0QejXC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  const videos = [
+    `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/XH92M1qWbX4?si=CpyutJgk9c0QejXC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+    `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-zKV2OFruWc?si=TUSULsbmCjFInD2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+  ];
 
   const skills = [
     { name: 'Adobe Premiere Pro', icon: <Video className="h-8 w-8 text-accent" /> },
@@ -62,18 +72,28 @@ export default function VideoEditorPage() {
               <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Featured Work</h2>
               <p className="mt-2 text-lg text-muted-foreground">A glimpse into my editing style.</p>
             </div>
-            <div className="max-w-3xl mx-auto">
-              <div
-                className="relative w-full shadow-2xl shadow-accent/20 rounded-lg overflow-hidden border border-accent/50"
-                style={{
-                  paddingTop: '56.25%', /* 16:9 Aspect Ratio */
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 w-full h-full"
-                  dangerouslySetInnerHTML={{ __html: videoIframe }}
-                />
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {videos.map((videoIframe, index) => (
+                    <CarouselItem key={index}>
+                      <div
+                        className="relative w-full shadow-2xl shadow-accent/20 rounded-lg overflow-hidden border border-accent/50"
+                        style={{
+                          paddingTop: '56.25%', /* 16:9 Aspect Ratio */
+                        }}
+                      >
+                        <div
+                          className="absolute top-0 left-0 w-full h-full"
+                          dangerouslySetInnerHTML={{ __html: videoIframe }}
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden sm:flex" />
+                <CarouselNext className="hidden sm:flex" />
+              </Carousel>
             </div>
           </div>
         </section>
