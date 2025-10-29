@@ -13,6 +13,13 @@
     "alt": "Manash Swain's developer portfolio profile picture",
     "hint": "developer portrait"
   },
+  "heroVideoEditor": {
+    "src": "/images/heroVideoEditor.png",
+    "width": 1920,
+    "height": 1080,
+    "alt": "Video editor portfolio background",
+    "hint": "editing setup desk"
+  },
   "pwLogo": {
     "src": "https://lh3.googleusercontent.com/d/1_9CjC9pC-E4J_b2f_qgX3n3zH4z6X8qj",
     "width": 80,

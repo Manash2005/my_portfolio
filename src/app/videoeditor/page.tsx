@@ -13,8 +13,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import placeholderImages from '@/lib/placeholder-images.json';
 
 export default function VideoEditorPage() {
+  const { heroVideoEditor } = placeholderImages;
+  
   const videos = [
     `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/XH92M1qWbX4?si=CpyutJgk9c0QejXC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
     `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/-zKV2OFruWc?si=TUSULsbmCjFInD2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
@@ -39,7 +42,7 @@ export default function VideoEditorPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <section className="relative h-screen flex items-center justify-start text-left overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-black/60 z-10" />
             <video
@@ -48,20 +51,20 @@ export default function VideoEditorPage() {
               muted
               playsInline
               className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
-              poster="https://picsum.photos/seed/video-bg/1920/1080"
+              poster={heroVideoEditor.src}
             >
                {/* Add a silent, looping background video source here later if you want */}
             </video>
              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-20"></div>
           </div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-20 px-4"
+            className="relative z-20 px-4 sm:px-6 lg:px-8 container"
           >
             <h1 className="font-headline text-5xl md:text-8xl font-bold tracking-tight text-white">Visual Storyteller</h1>
-            <p className="mt-4 text-lg md:text-2xl text-white/80 max-w-2xl mx-auto">Crafting compelling narratives through the art of video editing.</p>
+            <p className="mt-4 text-lg md:text-2xl text-white/80 max-w-2xl">Crafting compelling narratives through the art of video editing.</p>
           </motion.div>
         </section>
 
@@ -99,8 +102,8 @@ export default function VideoEditorPage() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="visible" />
+                <CarouselNext className="visible" />
               </Carousel>
             </div>
           </div>
