@@ -72,7 +72,7 @@ export default function VideoEditorPage() {
               <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight">Featured Work</h2>
               <p className="mt-2 text-lg text-muted-foreground">A glimpse into my editing style.</p>
             </div>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <Carousel 
                 opts={{
                   align: "center",
