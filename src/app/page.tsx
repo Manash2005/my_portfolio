@@ -11,8 +11,13 @@ export default function Home() {
   const { heroHome: heroImage } = placeholderImages;
   
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground p-4">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-background text-foreground p-4 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
+        <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 bg-gradient-radial from-primary/10 via-background to-background animate-pulse" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 min-h-[70vh]">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
