@@ -1,9 +1,16 @@
 {
-  "hero": {
-    "src": "/images/heroRoute.png",
+  "heroHome": {
+    "src": "/images/heroHome.png",
     "width": 400,
     "height": 400,
     "alt": "Manash Swain's profile picture",
+    "hint": "developer portrait"
+  },
+  "heroDeveloper": {
+    "src": "/images/heroDeveloper.png",
+    "width": 400,
+    "height": 400,
+    "alt": "Manash Swain's developer portfolio profile picture",
     "hint": "developer portrait"
   },
   "pwLogo": {

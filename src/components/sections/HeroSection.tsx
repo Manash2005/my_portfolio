@@ -33,7 +33,7 @@ const { name, title, resumeUrl, socialLinks } = data;
 const { hero: content } = data.pageContent;
 
 export default function HeroSection() {
-  const { hero: heroImage } = placeholderImages;
+  const { heroDeveloper: heroImage } = placeholderImages;
   
   const [text] = useTypewriter({
     words: [content.typewriterText.replace('{name}', name)],
