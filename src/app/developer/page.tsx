@@ -8,8 +8,6 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import CodingProfilesSection from '@/components/sections/CodingProfilesSection';
 import ScrollProgress from '@/components/ScrollProgress';
-import MiniProjectsSection from '@/components/sections/MiniProjectsSection';
-import ContactSection from '@/components/sections/ContactSection';
 
 export default function DeveloperPage() {
   return (
@@ -23,7 +21,6 @@ export default function DeveloperPage() {
         <SkillsSection />
         <CodingProfilesSection />
         <ProjectsSection />
-        <ContactSection />
       </main>
       <Footer />
       <ScrollToTop />

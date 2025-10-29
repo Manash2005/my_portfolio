@@ -21,7 +21,7 @@ export default function Home() {
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight">Manash Swain</h1>
-            <p className="mt-4 text-lg md:text-xl text-muted-foreground">A multi-disciplinary creative exploring the worlds of code and film.</p>
+            <p className="mt-4 text-lg md:text-xl text-muted-foreground">A creative student exploring the worlds of code and film.</p>
           </div>
 
           <div className="flex justify-center md:justify-end order-first md:order-last">
