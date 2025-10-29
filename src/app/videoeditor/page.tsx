@@ -50,7 +50,7 @@ export default function VideoEditorPage() {
               loop
               muted
               playsInline
-              className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
+              className="absolute z-0 w-full h-full object-contain"
               poster={heroVideoEditor.src}
             >
                {/* Add a silent, looping background video source here later if you want */}
