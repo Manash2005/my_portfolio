@@ -66,7 +66,7 @@ export default function VideoEditorPage() {
               <div
                 className="relative w-full shadow-2xl shadow-accent/20 rounded-lg overflow-hidden border border-accent/50"
                 style={{
-                  paddingTop: '75%', /* 4:3 Aspect Ratio */
+                  paddingTop: '56.25%', /* 16:9 Aspect Ratio */
                 }}
               >
                 <div
