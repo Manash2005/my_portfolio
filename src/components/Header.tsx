@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -91,12 +92,11 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#home" 
-          onClick={() => handleLinkClick(false)}
+        <Link 
+          href="/" 
           className="font-logo text-2xl font-semibold tracking-tight text-foreground transition-colors hover:text-primary">
           Manash
-        </a>
+        </Link>
         <div className="hidden md:flex">
           <NavLinks />
         </div>
@@ -110,7 +110,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-background/80 backdrop-blur-sm">
               <div className="flex h-full flex-col items-center justify-center">
-                <a href="#home" onClick={() => handleLinkClick(true)} className="font-logo text-2xl font-semibold mb-8">Manash</a>
+                <Link href="/" onClick={() => handleLinkClick(true)} className="font-logo text-2xl font-semibold mb-8">Manash</Link>
                 <Separator className="mb-8" />
                 <NavLinks isMobile />
               </div>
