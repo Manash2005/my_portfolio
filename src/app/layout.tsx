@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import data from '@/lib/data.json';
-import ScrollProgress from '@/components/ScrollProgress';
 
 export const metadata: Metadata = {
-  title: data.meta.title,
-  description: data.meta.description,
+  title: "Manash Swain's Portfolios",
+  description: "A collection of specialized portfolios by Manash Swain.",
 };
 
 export default function RootLayout({
@@ -23,11 +21,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <ScrollProgress />
-        <div className="relative isolate overflow-x-hidden">
-          {children}
-          <Toaster />
-        </div>
+        {children}
+        <Toaster />
       </body>
     </html>
   );
